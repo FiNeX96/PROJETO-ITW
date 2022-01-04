@@ -1,0 +1,72 @@
+﻿body, input, select, textarea {font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+    li:last-child {
+        border-right: none;
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover:not(.active) {
+            background-color: #444;
+        }
+
+        li a.active:hover {
+            color: #444;
+        }
+
+.active {
+    background-color: #5CAF50;
+}
+
+.banner {
+    height: 600px;
+    margin: auto;
+    background-image: url('hd-avengers-png-10203.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.content {
+    height: 300px;
+    width: 70%;
+    float: left;
+    margin: auto;
+}
+
+.advertising {
+    height: 300px;
+    width: 30%;
+    float: right;
+    margin: auto;
+    background-color: hotpink;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    margin: auto;
+}
+
+
+

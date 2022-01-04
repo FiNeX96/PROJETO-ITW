@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Javascript test file</title>
+    <script>
+        var operacao = "+";
+        function getOperacao() {
+            var e = document.getElementById("operacao")
+            operacao = e.options[e.selectedIndex].value;
+            console.log(operacao)
+            if (operacao === "!") {
+                op2.value = "Kekw";
+                op2.readOnly = true;
+                op2.style = "border:1px solid #ff0000";
+            } else {
+                op2.readOnly = false;
+            }
+        }
+        function calcula() {
+            var op1 = document.getElementById("op1");
+            var op2 = document.getElementById("op2");
+            var res = document.getElementById("res");
+
+
+            switch (operacao) {
+                case "+":
+                    res.value = parseFloat(op1.value) + parseFloat(op2.value);
+                    break;
+                case "-":
+                    res.value = parseFloat(op1.value) - parseFloat(op2.value);
+                    break;
+                case "*":
+                    res.value = parseFloat(op1.value) * parseFloat(op2.value);
+                    break;
+                case ":":
+                    res.value = parseFloat(op1.value) / parseFloat(op2.value);
+                    break;
+                case "%":
+                    res.value = parseFloat(op1.value) % parseFloat(op2.value);
+                    break;
+                case "!":
+                    res.value = 1;
+                    for (var i = 2; i <= op1.value; i++) {
+                        res.value = res.value * i
+                    }
+                    break;
+                    return res;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+          <h2><i class="fa fa-calculator"></i>Calculadora!</h2>
+        <div class="row">
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <input id="op1" value="2" />
+    <select id="operacao" onchange="getOperacao()">
+        <option value="+"> Soma </option>
+        <option value="-"> Subtração </option>
+        <option value="*"> Multiplicação </option>
+        <option value=":"> Divisão </option>
+        <option value="%"> Resto da Divisão Inteira</option>
+        <option value="!"> Fatorial </option>
+    </select>
+    <input id="op2" value="3" />
+    <span id="op-view">=</span>
+    <input id="res" value="" readonly="readonly"/><br />
+    <button onclick="calcula()">Calcular</button>
+</body>
+</html>

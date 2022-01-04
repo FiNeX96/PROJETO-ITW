@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+</head>
+<body>
+    
+        <input id="op1" />
+        <select id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input id="op2" />
+        <button onclick="calculadora()">Res</button>
+    <script>
+        function calculadora() {
+    var op1 = document.getElementById("op1").value;
+    var op2 = document.getElementById("op2").value;
+    var op = document.getElementById("operador").value;
+    var res = null;
+
+            switch (op) {
+                case "+":
+                    res = parseFloat(op1) + parseFloat(op2);
+                    break;
+                case "-":
+                    res = op1 - op2;
+                    break;
+                case "*":
+                    res = op1 * op2;
+                    break;
+                case "/":
+                    if (op2 == 0) {
+                        alert("Não podemos dividir por zero");
+                    } else {
+                        res = op1 / op2;
+                        break;
+                    }
+            }
+        alert("Resultado = " + res);
+}
+    </script>
+</body>
+</html>

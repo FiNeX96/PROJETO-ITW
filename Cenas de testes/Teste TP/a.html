@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript test file</title>
+    <script>
+function calcula() {
+var x = document.getElementById("op1");
+var y = document.getElementById("op2");
+console.log(parseFloat(x.value));
+console.log(parseFloat(y.value));
+}
+    </script>
+</head>
+<body>
+    <input id="op1" value="2" />
+    <span id="op-view">+</span>
+    <input id="op2" value="3" />
+    <input id="res" value="" /><br />
+    <button onclick="calcula()">Calcular</button>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Count Down Example</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <style type="text/css">
+        #theMessage {
+            font-family: 'Segoe UI Light';
+            font-size: 64px;
+            color: #bbb;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var min = 5;
+            var sec = 0;
+            setInterval(function() {
+                document.getElementById("timer").innerHTML = min + " : " + sec;
+                if (sec == 0) {
+                    sec = 60;
+                    min--;
+                    if (min == -1) { //--- aqui acaba
+                        min = 4;
+                    }
+                }
+                sec--;
+            }, 1000); // normal: 1000 | Colocar em 50 para testar…
+        }
+    </script>
+</head>
+<body>
+    <div id="theMessage" class="text-center">Countdown in <span id="timer">05:00</span> minutes!</div>
+</body>
+</html>

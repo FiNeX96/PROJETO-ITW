@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jogo javascript</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        piece { width: 80px; height: 80px; position: absolute; 
+                border-radius:40px;/**/ border: dotted 1px black; opacity: .8; }
+        piece:hover { opacity: .5; }
+        #azul { background-color: blue; }
+        #vermelho { background-color: red; }
+        #verde { background-color: green; }
+        #amarelo { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border-bottom pb-2 mb-2"><h2>O meu joguinho ... <i class="fa fa-smile-o"></i></h2></div>
+        <button onclick="scramble()" class="btn btn-primary">Baralhar</button>
+        <span id="currentInfo"></span>
+        <piece id="azul" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+        <piece id="vermelho" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+        <piece id="verde" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+        <piece id="amarelo" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+    </div>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script>
+        function scramble() {
+            var largura = window.innerWidth;
+            var altura = window.innerHeight;
+            /* Azul */
+            azul.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            azul.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Azul: " + azul.style.top + " / " + azul.style.left);
+            /* Vermelho */
+            vermelho.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            vermelho.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Vermelho: " + vermelho.style.top + " / " + vermelho.style.left);
+            /* Verde */
+            verde.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            verde.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Verde: " + verde.style.top + " / " + verde.style.left);
+            /* Amarelo */
+            amarelo.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            amarelo.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Amarelo: " + amarelo.style.top + " / " + amarelo.style.left);
+        }
+        function setCurrentDiv() {
+            //var x = event.target.tagName;
+            document.getElementById("currentInfo").inneHTMLr = "<p>Olá! Eu sou o " + event.target.id + "<br />" +
+                "top: " + event.target.style.top + "<br>left: " + event.target.style.left + "</p>";
+        }
+        function clearSelected() {
+            document.getElementById("currentInfo").innerText = "";
+        }
+        window.onload = scramble;
+    </script>
+</body>
+</html>
