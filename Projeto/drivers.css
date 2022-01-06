@@ -1,9 +1,8 @@
 ﻿body {
     font-family: 'Open Sans', sans-serif;
     margin: 70px 0 70px 0;
+    text-decoration: none;
 }
-
-
 /* button default
 ---------------------------- */
 .btn-default {
