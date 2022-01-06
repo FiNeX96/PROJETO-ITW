@@ -24,6 +24,9 @@
         background-color: #e6e6e6;
         border-color: #adadad;
     }
-    .btn-setFav:hover { /* RESOLVER ESTA TRETA PARA O BOTÃO FICAR ROSA QND SE DÁ HOVER, FAVORITOS LOL */
-        background-color:hotpink;
+    .btn-fav{
+        border-color:green;
+        background-color:white;
+        position: relative;
+        right: 300px;
     }

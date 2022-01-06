@@ -3,6 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
+    var listfavs = [];
     self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/drivers');
     //self.baseUri = ko.observable('http://localhost:62595/api/drivers');
     self.displayName = 'Drivers List';
@@ -56,7 +57,6 @@ var vm = function () {
            self.pagesize(data.PageSize)
            self.totalPages(data.PageCount);
            self.totalRecords(data.Total);
-           self.SetFavourites();
        });
     };
 
@@ -68,6 +68,8 @@ var vm = function () {
         else {
             event.target.classList.add("btn-danger");
         }
+
+        // a ideia aki é tentar ter um mapa ( dicionário, em que a key é o driverID e o value é a entrada da lista correspondente )
 
     }
     //--- Internal functions
