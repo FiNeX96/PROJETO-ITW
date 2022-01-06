@@ -235,6 +235,9 @@
     <Content Include="Cenas de testes\Teste TP\index.html" />
     <Content Include="Cenas de testes\Teste TP\index2.html" />
     <Content Include="Cenas de testes\Teste TP\ValidarForm.js" />
+    <Content Include="Teste de tretas\teste.css" />
+    <Content Include="Teste de tretas\teste.html" />
+    <Content Include="Teste de tretas\teste.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

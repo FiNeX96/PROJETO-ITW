@@ -45,20 +45,31 @@ var vm = function () {
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getDrivers...');
-        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+       var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
-            console.log(data);
-            hideLoading();
-            self.records(data.List);
-            self.currentPage(data.CurrentPage);
-            self.hasNext(data.HasNext);
-            self.hasPrevious(data.HasPrevious);
-            self.pagesize(data.PageSize)
-            self.totalPages(data.PageCount);
-            self.totalRecords(data.Total);
-            //self.SetFavourites();
-        });
+           console.log(data);
+           hideLoading();
+           self.records(data.List);
+           self.currentPage(data.CurrentPage);
+           self.hasNext(data.HasNext);
+           self.hasPrevious(data.HasPrevious);
+           self.pagesize(data.PageSize)
+           self.totalPages(data.PageCount);
+           self.totalRecords(data.Total);
+           self.SetFavourites();
+       });
     };
+
+    setFavorites = function () {
+        botao = $(event.target).hasClass("btn-danger");
+        if (botao == true) {
+          event.target.classList.remove("btn-danger");
+        }
+        else {
+            event.target.classList.add("btn-danger");
+        }
+
+    }
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
@@ -82,13 +93,14 @@ var vm = function () {
     }
 
 
-
+    // aparecer o modal //
     function showLoading() {
         $("#myModal").modal('show', {
             backdrop: 'static',
             keyboard: false
         });
     }
+    // desaparecer o modal//
     function hideLoading() {
         $('#myModal').on('shown.bs.modal', function (e) {
             $("#myModal").modal('hide');
