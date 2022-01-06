@@ -40,7 +40,7 @@
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
                 <span data-bind="html: 'Drivers: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
-            <button class="btn-fav" style="width: 100px;height:50px">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
+            <button class="btn-fav btn-default " style="width: 100px;height:50px">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
