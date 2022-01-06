@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="teste.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <tbody data-bind="foreach: groupedUsers">
+            <tr data-bind="foreach: $data">
+                <td data-bind="text: name">
+                </td>
+                <td data-bind="text: age">
+                </td>
+                <td data-bind="text: nat">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="../Scripts/knockout-3.5.1.js"></script>
+    <script src="teste.js"></script>
+</body>
+</html>

@@ -3,6 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
+    var listfavs = [];
     self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/drivers');
     //self.baseUri = ko.observable('http://localhost:62595/api/drivers');
     self.displayName = 'Drivers List';
@@ -45,20 +46,32 @@ var vm = function () {
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getDrivers...');
-        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+       var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
-            console.log(data);
-            hideLoading();
-            self.records(data.List);
-            self.currentPage(data.CurrentPage);
-            self.hasNext(data.HasNext);
-            self.hasPrevious(data.HasPrevious);
-            self.pagesize(data.PageSize)
-            self.totalPages(data.PageCount);
-            self.totalRecords(data.Total);
-            //self.SetFavourites();
-        });
+           console.log(data);
+           hideLoading();
+           self.records(data.List);
+           self.currentPage(data.CurrentPage);
+           self.hasNext(data.HasNext);
+           self.hasPrevious(data.HasPrevious);
+           self.pagesize(data.PageSize)
+           self.totalPages(data.PageCount);
+           self.totalRecords(data.Total);
+       });
     };
+
+    setFavorites = function () {
+        botao = $(event.target).hasClass("btn-danger");
+        if (botao == true) {
+          event.target.classList.remove("btn-danger");
+        }
+        else {
+            event.target.classList.add("btn-danger");
+        }
+
+        // a ideia aki é tentar ter um mapa ( dicionário, em que a key é o driverID e o value é a entrada da lista correspondente )
+
+    }
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
@@ -82,13 +95,14 @@ var vm = function () {
     }
 
 
-
+    // aparecer o modal //
     function showLoading() {
         $("#myModal").modal('show', {
             backdrop: 'static',
             keyboard: false
         });
     }
+    // desaparecer o modal//
     function hideLoading() {
         $('#myModal').on('shown.bs.modal', function (e) {
             $("#myModal").modal('hide');
