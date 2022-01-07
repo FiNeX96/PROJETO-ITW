@@ -194,9 +194,11 @@
     <Content Include="Projeto\drivers.html" />
     <Content Include="Projeto\drivers.js" />
     <Content Include="Projeto\history.html" />
+    <Content Include="Projeto\legends.html" />
     <Content Include="Projeto\myCSS.css" />
     <Content Include="Projeto\index.html" />
     <Content Include="Projeto\nav.html" />
+    <Content Include="Projeto\rules.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
