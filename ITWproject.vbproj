@@ -193,6 +193,7 @@
     <Content Include="Projeto\drivers.css" />
     <Content Include="Projeto\drivers.html" />
     <Content Include="Projeto\drivers.js" />
+    <Content Include="Projeto\history.html" />
     <Content Include="Projeto\myCSS.css" />
     <Content Include="Projeto\index.html" />
     <Content Include="Projeto\nav.html" />
