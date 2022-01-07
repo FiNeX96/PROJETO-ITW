@@ -9,18 +9,18 @@
 }
     .btn-default:focus {
         color: #333;
-        background-color: #e6e6e6;
+        background-color: palegreen;
         border-color: #8c8c8c;
     }
 
     .btn-default:active,
     .btn-default:hover {
-        color: #333;
-        background-color: #e6e6e6;
+        color: palegreen;
+        background-color: #f8f9fa;
         border-color: #adadad;
     }
 .nav-link, .dropdown-toggle {
-    color: white !important;
+    color: palegreen !important;
 }/* AKI MUDAS A COR DA LETRA NA NAVBAR */
 
 
