@@ -53,10 +53,12 @@
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
                 <span data-bind="html: 'Drivers: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
-            <button class="btn-fav btn-default " style="width: 100px;height:50px">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
             <div class="col-8 my-0 pt-3">
                 <div class="container">
-                    <input class="form-control" ID="SearchText" placeholder="Search by Name" />
+                    <input class="form-control" ID="SearchText" placeholder="Search by Name" style="width:300px; float: left;"/>
+                </div>
+                <div>
+                    <button class="btn-fav btn-outline-success" style="width: 200px;height:30px;float:right;">Show Favorites</button>
                 </div>
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
@@ -78,7 +80,6 @@
                 </ul>
             </div>
         </div>
-
         <!-- /ko -->
         <table class="table table-striped table-sm small">
             <thead class="bg-dark text-light">

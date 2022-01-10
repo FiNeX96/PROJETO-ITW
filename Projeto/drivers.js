@@ -62,6 +62,7 @@ var vm = function () {
     };
 
     setFavorites = function () {
+        fav = List;
         botao = $(event.target).hasClass("btn-danger");
         if (botao == true) {
           event.target.classList.remove("btn-danger");
