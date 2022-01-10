@@ -193,6 +193,7 @@
     <Content Include="Projeto\circuits.html" />
     <Content Include="Projeto\circuits.js" />
     <Content Include="Projeto\constructors.html" />
+    <Content Include="Projeto\constructors.js" />
     <Content Include="Projeto\countries.html" />
     <Content Include="Projeto\drivers.css" />
     <Content Include="Projeto\drivers.html" />
