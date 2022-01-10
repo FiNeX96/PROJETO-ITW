@@ -55,6 +55,9 @@
             </p>
             <button class="btn-fav btn-default " style="width: 100px;height:50px">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
             <div class="col-8 my-0 pt-3">
+                <div class="container">
+                    <input class="form-control" ID="SearchText" placeholder="Search expression" />
+                </div>
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
                     <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './drivers.html?page=' + '1',  rel:'prev'}">⇤</a></li>
@@ -119,6 +122,29 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.13.0.js"></script>
     <script src="drivers.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#SearchText").autocomplete({
+                minLength: 2,
+                source: function (request, response) {
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "DynamicShellSearch.asmx/SearchData",
+                        data: "{'DName':'" + $('#SearchText').val() + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            response(data.d);
+                        },
+                        error: function (result) {
+                            alert(result.statusText);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
