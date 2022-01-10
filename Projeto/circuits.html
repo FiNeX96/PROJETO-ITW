@@ -42,7 +42,6 @@
             </div>
         </div>
     </nav>
-    <!-- Working Area -->
     <div class="container">
         <div class="border-bottom pt-4 pb-2 mb-3">
             <h2>Drivers List</h2>
@@ -51,26 +50,26 @@
         <div class="row small">
             <p class=" col-4 mr-auto pt-2">
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                <span data-bind="html: 'Drivers: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                <span data-bind="html: 'Circuits: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
             <button class="btn-fav btn-default " style="width: 100px;height:50px">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './drivers.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './drivers.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './circuits.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './circuits.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
                     <!-- /ko -->
                     <!-- ko foreach: pageArray()-->
                     <!-- ko if:$data == $parent.currentPage() -->
                     <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
                     <!-- /ko -->
                     <!-- ko if:$data != $parent.currentPage() -->
-                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './drivers.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './circuits.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
                     <!-- /ko -->
                     <!-- /ko -->
                     <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './drivers.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './drivers.html?page=' + totalPages() }">⇥</a></li>
+                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './circuits.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './circuits.html?page=' + totalPages() }">⇥</a></li>
                     <!-- /ko -->
                 </ul>
             </div>
@@ -88,12 +87,12 @@
             </thead>
             <tbody data-bind="foreach: records">
                 <tr>
-                    <td class="align-middle" data-bind="text:DriverId"></td>
+                    <td class="align-middle" data-bind="text:CircuitId"></td>
                     <td class="align-middle" data-bind="text:Name"></td>
-                    <td class="align-middle" data-bind="text:Nationality"></td>
+                    <td class="align-middle" data-bind="text:Country"></td>
                     <td class="text-end">
-                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./driverDetails.html?id=' + DriverId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
-                        <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + DriverId }" title="Selecione para adicionar aos favoritos"></i></button>
+                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./circuits.html?id=' + CircuitId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                        <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + CircuitId }" title="Selecione para adicionar aos favoritos"></i></button>
                     </td>
                 </tr>
             </tbody>
@@ -115,10 +114,9 @@
         </div>
     </div>
     <!-- End of Working Area -->
-
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
-    <script src="drivers.js"></script>
+    <script src="circuits.js"></script>
 </body>
 </html>
