@@ -48,8 +48,8 @@
         <div class="border-bottom pt-4 pb-2 mb-3">
             <h2>Drivers List</h2>
         </div>
-        <div class="row" style="float: left;">
-            <input class="form-control" id="SearchText" onkeyup="myFunction()" placeholder="Search by Name" style="width:300px; float: left;" />
+        <div class="row">
+            <input class="form-control" id="SearchText" onkeyup="myFunction()" placeholder="Search by Name" style="width:300px;" />
         </div>
         <!-- ko if:records().length > 0 -->
         <p class=" col-4 mr-auto pt-2">
@@ -58,9 +58,9 @@
         </p>
         <div class="row-cols-3">
             <div class="row">
-                <button class="btn-fav btn-outline-success" style="width: 200px;height:30px;">Show Favorites</button>
+                <button class="btn-fav btn-outline-success" style="width: 200px;height:30px;margin-bottom:5px">Show Favorites</button>
             </div>
-            <div class="row" style="float:right;">
+            <div class="row">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
                     <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './drivers.html?page=' + '1',  rel:'prev'}">⇤</a></li>
