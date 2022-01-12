@@ -126,31 +126,5 @@
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/jquery-ui-1.13.0.js"></script>
     <script src="drivers.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#SearchText").autocomplete({
-                minLength: 3,
-                source: function (request, response) {
-                    $.ajax({
-                        type: "GET",
-                        contentType: "application/json; charset=utf-8",
-                        url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
-                        data: '',
-                        dataType: "json",
-                        success: function (data) {
-                            response($.map(data, function (item) {
-                                peido(data);
-                                return item.Name
-                                
-                            }));
-                        },
-                        error: function (result) {
-                            alert(result.statusText);
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

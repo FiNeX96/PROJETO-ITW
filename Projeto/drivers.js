@@ -1,9 +1,33 @@
-﻿// ViewModel KnockOut
+﻿// Autocomplete 
+ $(document).ready(function () {
+    $("#SearchText").autocomplete({
+        minLength: 3,
+        source: function (request, response) {
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
+                data: '',
+                dataType: "json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        peido(data);
+                        return item.Name
+
+                    }));
+                },
+                error: function (result) {
+                    alert(result.statusText);
+                }
+            });
+        }
+    });
+});
+// ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    var listfavs = [];
     self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/drivers');
     //self.baseUri = ko.observable('http://localhost:62595/api/drivers');
     self.displayName = 'Drivers List';
@@ -50,7 +74,6 @@ var vm = function () {
         ajaxHelper(composedUri, 'GET').done(function (data) {
            console.log(data);
             hideLoading();
-            // ISTO ESTÁ BASICAMENTE A DEFINIR AS VARIÁVEIS QUE ELE TEM LÁ EM CIMA NO KO
            self.records(data.List);
            self.currentPage(data.CurrentPage);
            self.hasNext(data.HasNext);
@@ -79,9 +102,9 @@ var vm = function () {
         self.error(''); // Clear error message
         return $.ajax({
             type: method,
-            url: uri,
             dataType: 'json',
             contentType: 'application/json',
+            url: uri,
             data: data ? JSON.stringify(data) : null,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("AJAX Call[" + uri + "] Fail...");
@@ -164,6 +187,6 @@ function myFunction() {
     }
 }
 function peido(data) {
-    records = data;
-    console.log(records);
+    records = data
+    console.log(records)
 }
