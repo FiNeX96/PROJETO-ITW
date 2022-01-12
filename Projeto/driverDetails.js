@@ -39,7 +39,7 @@
         });
         ajaxHelper(composedUri2, 'GET').done(function (data) {
             self.Wins(data.Wins)
-            self.LastPos(data.career[0].Position)
+            self.LastPos(data.Career[0].Position)
         });
     };
     //--- Internal functions
