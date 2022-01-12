@@ -11,7 +11,6 @@
                 dataType: "json",
                 success: function (data) {
                     response($.map(data, function (item) {
-                        peido(data);
                         return item.Name
 
                     }));
