@@ -139,7 +139,9 @@
                         dataType: "json",
                         success: function (data) {
                             response($.map(data, function (item) {
-                                return item.Name;
+                                peido(data);
+                                return item.Name
+                                
                             }));
                         },
                         error: function (result) {

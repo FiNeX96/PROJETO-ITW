@@ -58,11 +58,11 @@ var vm = function () {
            self.pagesize(data.PageSize)
            self.totalPages(data.PageCount);
            self.totalRecords(data.Total);
+           
        });
     };
 
     setFavorites = function () {
-        fav = List;
         botao = $(event.target).hasClass("btn-danger");
         if (botao == true) {
           event.target.classList.remove("btn-danger");
@@ -151,8 +151,6 @@ function myFunction() {
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
-
-    // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
@@ -164,4 +162,8 @@ function myFunction() {
             }
         }
     }
+}
+function peido(data) {
+    records = data;
+    console.log(records);
 }
