@@ -3,6 +3,7 @@
     //---Variáveis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/Drivers/Driver?id=');
+    self.baseUri2 = ko.observable('http://192.168.160.58/Formula1/api/Statistics/Driver?id=')
     self.displayName = 'Driver Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
@@ -12,7 +13,9 @@
     self.ImageUrl = ko.observable('');
     self.Name = ko.observable('');
     self.Nationality = ko.observable('');
+    self.LastPos = ko.observable('');
     self.Number = ko.observable('');
+    self.Wins = ko.observable();
     self.Races = ko.observableArray('');
     self.Url = ko.observable('');
 
@@ -20,8 +23,9 @@
     self.activate = function (id) {
         console.log('CALL: getDriver...');
         var composedUri = self.baseUri() + id;
+        var composedUri2 = self.baseUri2() + id;
+        console.log(composedUri2)
         ajaxHelper(composedUri, 'GET').done(function (data) {
-            console.log(data);
             self.DriverId(data.DriverId);
             self.DriverRef(data.DriverRef);
             self.ImageUrl(data.ImageUrl);
@@ -31,6 +35,11 @@
             self.Races(data.Races);
             self.Url(data.Url);
             hideLoading();
+
+        });
+        ajaxHelper(composedUri2, 'GET').done(function (data) {
+            self.Wins(data.Wins)
+            self.LastPos(data.career[0].Position)
         });
     };
     //--- Internal functions

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="myCSS.css" />
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-success navbar-expand-lg">
+    <nav class="navbar navbar-dark bg-success navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 F1Tracker
@@ -74,6 +74,14 @@
                 <td class="col-md-10" data-bind="text: Number"></td>
             </tr>
             <tr class="row">
+                <th class="col-md-2">Wins</th>
+                <td class="col-md-10" data-bind="text: Wins"></td>
+            </tr>
+            <tr class="row">
+        <th class="col-md-2">Last Position</th>
+        <td class="col-md-10" data-bind="text: LastPos"></td>
+    </tr>
+            <tr class="row">
                 <th class="col-md-2">Learn More About <span data-bind="text: Name"></span></th>
                 <td class="col-md-10"><a class="text-muted text-decoration-none" data-bind="attr: {href: Url, target:'blank'}"><i class="fa fa-external-link"></i> [<span class="" data-bind="text: Url"></span>]</a></td>
             </tr>
@@ -81,7 +89,7 @@
                 <th colspan="2">Races Done: <span data-bind="text: Races().length"></span></th>
             </tr>
         </table>
-        <table class="table table-striped table-sm small">
+        <table class="table table-striped table-sm small" style="overflow-y: scroll;height: 500px; display: block;">
             <thead class="bg-success text-light">
                 <tr>
                     <th scope="col">Id</th>
@@ -112,7 +120,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-dark text-light">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="../images/F1_logo.png" height="30" /> Loading data...
+                        <img src="https://www.gqportugal.pt/media/pages/4472/full_F1.jpg" height="30" /> Loading data...
                     </h5>
                 </div>
                 <div class="modal-body text-center">
