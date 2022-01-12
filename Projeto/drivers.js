@@ -35,7 +35,7 @@ var vm = function () {
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
     self.currentPage = ko.observable(1);
-    self.pagesize = ko.observable(20);
+    self.pagesize = ko.observable(900);
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
@@ -186,7 +186,4 @@ function myFunction() {
         }
     }
 }
-function peido(data) {
-    records = data
-    console.log(records)
-}
+
