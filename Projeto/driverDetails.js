@@ -40,13 +40,12 @@
         ajaxHelper(composedUri2, 'GET').done(function (data) {
             self.Wins(data.Wins)
             position = data.Career[0].Position
-            console.log(position)
             function suffix(value) {
-            if (value == 1) 
+                if (value == 1 || value == 21 || value == 31 || value == 41 || value == 51)
                 return value + "st";
-            else if (value == 2)
+                else if (value == 2 || value == 22 || value == 32 || value == 42 || value == 52)
                 return value + "nd";
-            else if (value == 3)
+                else if (value == 3 || value == 23 || value == 33 || value == 43 || value == 53)
                 return value + "rd";
             else
                 return value + "th";
