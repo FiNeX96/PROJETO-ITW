@@ -39,7 +39,19 @@
         });
         ajaxHelper(composedUri2, 'GET').done(function (data) {
             self.Wins(data.Wins)
-            self.LastPos(data.Career[0].Position)
+            position = data.Career[0].Position
+            console.log(position)
+            function suffix(value) {
+            if (value == 1) 
+                return value + "st";
+            else if (value == 2)
+                return value + "nd";
+            else if (value == 3)
+                return value + "rd";
+            else
+                return value + "th";
+        }
+            self.LastPos(suffix(position))
         });
     };
     //--- Internal functions
