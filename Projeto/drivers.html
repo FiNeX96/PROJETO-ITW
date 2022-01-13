@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-success navbar-expand-lg">
+    <nav class="navbar navbar-dark bg-danger navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 F1Tracker
@@ -44,14 +44,13 @@
             </div>
         </div>
     </nav>
+    <div class="filler" style="width:100%;height:50px"></div>
     <!-- Working Area -->
     <div class="container">
-        <div class="border-bottom pt-4 pb-2 mb-3">
+        <div class="border-bottom border-danger pt-4 pb-2 mb-3">
             <h2>Drivers List</h2>
         </div>
-        <div class="row">
-            <input class="form-control" id="SearchText" onkeyup="myFunction()" placeholder="Search by Name" style="width:300px;" />
-        </div>
+            <input class="form-control" id="SearchText" onkeyup="myFunction()" placeholder="Search by Name"style="width:300px;" />
         <!-- ko if:records().length > 0 -->
         <p class=" col-4 mr-auto pt-2">
             <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
@@ -84,7 +83,7 @@
         </div>
         <!-- /ko -->
         <table class="table table-striped table-sm small" id="myTable">
-            <thead class="bg-success text-light">
+            <thead class="bg-danger text-light">
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
