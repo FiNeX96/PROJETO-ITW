@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2021/22 - Driver Details</title>
+    <title>F1 Tracker Driver Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -50,11 +50,12 @@
     </nav>
     <div class="filler" style="width:100%;height:50px"></div>
     <!-- Work Area-->
+    
     <div class="container">
         <div class="py-2 mb-3">
             <h2 data-bind="text:Name() +' ['+DriverId()+']'"></h2>
         </div>
-        <!-- ko if:Name().length > 0 -->
+         <!--ko if:Name().length > 0 -->
         <table class="table table-sm small">
             <tr class="row">
                 <th class="col-md-2">Driver Id</th>
@@ -120,7 +121,9 @@
             </tbody>
         </table>
         <!-- /ko -->
+
     </div>
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
