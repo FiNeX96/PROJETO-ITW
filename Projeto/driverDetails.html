@@ -25,13 +25,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html">Drivers</a></li>
-                    <li class="nav-item"> 
+                    <li class="nav-item">
                         <div class="dropdown">
-                        <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Constructors</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href='constructors.html'>All constructors</a></li>
-                            <li><a class="dropdown-item" href="constructors2021.html">2021 Teams</a></li>
+                            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Constructors</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href='constructors.html'>All constructors</a></li>
+                                <li><a class="dropdown-item" href="constructors2021.html">2021 Teams</a></li>
                             </ul>
+                        </div>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="circuits.html">Circuits</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html">Seasons</a></li>
                     <li class="nav-item">
@@ -50,12 +51,12 @@
     </nav>
     <div class="filler" style="width:100%;height:50px"></div>
     <!-- Work Area-->
-    
+
     <div class="container">
         <div class="py-2 mb-3">
             <h2 data-bind="text:Name() +' ['+DriverId()+']'"></h2>
         </div>
-         <!--ko if:Name().length > 0 -->
+        <!--ko if:Name().length > 0 -->
         <table class="table table-sm small">
             <tr class="row">
                 <th class="col-md-2">Driver Id</th>
@@ -130,11 +131,11 @@
             <div class="modal-content">
                 <div class="modal-header bg-dark text-light">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="https://www.gqportugal.pt/media/pages/4472/full_F1.jpg" height="30" /> Loading data...
+                        <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
+
                     </h5>
                 </div>
-                <div class="modal-body text-center">
-                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
                 </div>
             </div>
         </div>

@@ -192,6 +192,8 @@
     <Content Include="Formula1\myScript.js" />
     <Content Include="Projeto\circuits.html" />
     <Content Include="Projeto\circuits.js" />
+    <Content Include="Projeto\constructorDetails.html" />
+    <Content Include="Projeto\constructorDetails.js" />
     <Content Include="Projeto\constructors.html" />
     <Content Include="Projeto\constructors.js" />
     <Content Include="Projeto\countries.html" />
