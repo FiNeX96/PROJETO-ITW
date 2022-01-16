@@ -82,6 +82,10 @@
                 <th colspan="2">Races Done: <span data-bind="text: Races().length"></span></th>
             </tr>
         </table>
+        <br />
+        <div>
+            <h1>Drivers:</h1>
+        </div>
         <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block;">
             <thead class="bg-success text-light">
                 <tr>
@@ -99,12 +103,16 @@
                     <td class="align-middle" data-bind="text:Nationality"></td>
                     <td class="align-middle" data-bind="text:ImageUrl"></td>
                     <td class="text-end">
-                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./driverDetails.html?id=' + DriverId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./driverdetailsv2.html?id=' + DriverId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
                         <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + DriverId }" title="Selecione para adicionar aos favoritos"></i></button>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <br />
+        <div>
+            <h1>Races:</h1>
+        </div>
         <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block;">
                 <thead class="bg-success text-light">
                     <tr>
