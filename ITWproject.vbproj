@@ -197,8 +197,9 @@
     <Content Include="Projeto\constructors.html" />
     <Content Include="Projeto\constructors.js" />
     <Content Include="Projeto\countries.html" />
-    <Content Include="Projeto\driverDetails.html" />
     <Content Include="Projeto\driverDetails.js" />
+    <Content Include="Projeto\driverDetailsAntigo.html" />
+    <Content Include="Projeto\driverdetailsv2.html" />
     <Content Include="Projeto\drivers.css" />
     <Content Include="Projeto\drivers.html" />
     <Content Include="Projeto\drivers.js" />
