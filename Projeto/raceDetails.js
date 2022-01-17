@@ -23,7 +23,7 @@
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             self.RaceId(data.RaceId);
-            self.Circuit(data.Cicruit);
+            self.Circuit(data.Circuit);
             self.Year(data.Year);
             self.Name(data.Name);
             self.Round(data.Round);
