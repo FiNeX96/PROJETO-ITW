@@ -190,6 +190,7 @@
     <Content Include="Formula1\index.html" />
     <Content Include="Formula1\myCSS.css" />
     <Content Include="Formula1\myScript.js" />
+    <Content Include="Projeto\circuitDetails.html" />
     <Content Include="Projeto\circuits.html" />
     <Content Include="Projeto\circuits.js" />
     <Content Include="Projeto\constructorDetails.html" />

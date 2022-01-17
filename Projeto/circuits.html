@@ -13,7 +13,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-danger navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="padding-right:30px;font-weight:bold">
                 F1Tracker
@@ -85,7 +85,7 @@
 
         <!-- /ko -->
         <table class="table table-striped table-sm small">
-            <thead class="bg-success text-light">
+            <thead class="bg-dark text-light">
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
@@ -99,7 +99,7 @@
                     <td class="align-middle" data-bind="text:Name"></td>
                     <td class="align-middle" data-bind="text:Country"></td>
                     <td class="text-end">
-                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./circuits.html?id=' + CircuitId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./circuitDetails.html?id=' + CircuitId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
                         <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + CircuitId }" title="Selecione para adicionar aos favoritos"></i></button>
                     </td>
                 </tr>
