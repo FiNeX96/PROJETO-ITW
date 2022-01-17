@@ -1,4 +1,5 @@
-﻿var vm = function () {
+﻿
+var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
@@ -29,6 +30,7 @@
             self.DriverId(data.DriverId);
             self.DriverRef(data.DriverRef);
             self.ImageUrl(data.ImageUrl);
+            
             self.Name(data.Name);
             self.Nationality(data.Nationality);
             self.Number(data.Number);
