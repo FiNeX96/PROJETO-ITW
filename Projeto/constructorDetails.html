@@ -35,6 +35,7 @@
                         </div>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="circuits.html">Circuits</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html">Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html">Races</a></li>
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">More</a>
@@ -79,7 +80,8 @@
                 <td class="col-md-10"><a class="text-muted text-decoration-none" data-bind="attr: {href: Url, target:'blank'}"><i class="fa fa-external-link"></i> [<span class="" data-bind="text: Url"></span>]</a></td>
             </tr>
             <tr class="row">
-                <th colspan="2">Races Done: <span data-bind="text: Races().length"></span></th>
+                <th class="col-md-2">Races Done</th>
+                <td class="col-md-10"  data-bind="text: Races().length"></td>
             </tr>
         </table>
         <!-- /ko -->

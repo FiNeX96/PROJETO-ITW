@@ -212,6 +212,8 @@
     <Content Include="Projeto\nav.html" />
     <Content Include="Projeto\raceDetails.html" />
     <Content Include="Projeto\raceDetails.js" />
+    <Content Include="Projeto\races.html" />
+    <Content Include="Projeto\races.js" />
     <Content Include="Projeto\rules.html" />
     <Content Include="Projeto\seasons.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />

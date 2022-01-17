@@ -1,40 +1,15 @@
-﻿// Autocomplete 
- $(document).ready(function () {
-    $("#SearchText").autocomplete({
-        minLength: 3,
-        source: function (request, response) {
-            $.ajax({
-                type: "GET",
-                contentType: "application/json; charset=utf-8",
-                url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
-                data: '',
-                dataType: "json",
-                success: function (data) {
-                    response($.map(data, function (item) {
-                        return item.Name
-
-                    }));
-                },
-                error: function (result) {
-                    alert(result.statusText);
-                }
-            });
-        }
-    });
-});
-// ViewModel KnockOut
-var vm = function () {
+﻿var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/drivers');
-    //self.baseUri = ko.observable('http://localhost:62595/api/drivers');
-    self.displayName = 'Drivers List';
+    var listfavs = [];
+    self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/Races');
+    self.displayName = 'Races List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
     self.currentPage = ko.observable(1);
-    self.pagesize = ko.observable(20);
+    self.pagesize = ko.observable(10);
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
@@ -68,26 +43,26 @@ var vm = function () {
     };
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getDrivers...');
-       var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+        console.log('CALL: getCircuits...');
+        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
-           console.log(data);
+            console.log(data);
             hideLoading();
-           self.records(data.List);
-           self.currentPage(data.CurrentPage);
-           self.hasNext(data.HasNext);
-           self.hasPrevious(data.HasPrevious);
-           self.pagesize(data.PageSize)
-           self.totalPages(data.PageCount);
-           self.totalRecords(data.Total);
-           
-       });
+            // ISTO ESTÁ BASICAMENTE A DEFINIR AS VARIÁVEIS QUE ELE TEM LÁ EM CIMA NO KO
+            self.records(data.List);
+            self.currentPage(data.CurrentPage);
+            self.hasNext(data.HasNext);
+            self.hasPrevious(data.HasPrevious);
+            self.pagesize(data.PageSize)
+            self.totalPages(data.PageCount);
+            self.totalRecords(data.Total);
+        });
     };
 
     setFavorites = function () {
         botao = $(event.target).hasClass("btn-danger");
         if (botao == true) {
-          event.target.classList.remove("btn-danger");
+            event.target.classList.remove("btn-danger");
         }
         else {
             event.target.classList.add("btn-danger");
@@ -101,9 +76,9 @@ var vm = function () {
         self.error(''); // Clear error message
         return $.ajax({
             type: method,
+            url: uri,
             dataType: 'json',
             contentType: 'application/json',
-            url: uri,
             data: data ? JSON.stringify(data) : null,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("AJAX Call[" + uri + "] Fail...");
@@ -164,27 +139,3 @@ $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
-
-
-function myFunction() {
-    // Declare variables
-    self.Name = ko.observable('');
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("SearchText");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-}
-
-
