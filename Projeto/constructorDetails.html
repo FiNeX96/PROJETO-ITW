@@ -89,6 +89,7 @@
         <div style="width: 50%; float: right;">
             <h1>Races <i class="fa fa-flag-checkered"></i> </h1>
         </div>
+        <!-- ko if:Drivers().length > 0 -->
         <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; width: 30%; float: left;">
             <thead class="bg-success text-light">
                 <tr>
@@ -110,6 +111,8 @@
                 </tr>
             </tbody>
         </table>
+        <!-- /ko-->
+        <!-- ko if:Races().length > 0 -->
         <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; width: 50%; float: right;">
             <thead class="bg-success text-light">
                 <tr>
