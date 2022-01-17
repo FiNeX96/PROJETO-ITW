@@ -213,6 +213,7 @@
     <Content Include="Projeto\raceDetails.html" />
     <Content Include="Projeto\raceDetails.js" />
     <Content Include="Projeto\rules.html" />
+    <Content Include="Projeto\seasons.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
