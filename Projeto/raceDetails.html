@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="myCSS.css" />
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-danger navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="padding-right:30px;font-weight:bold">
                 F1Tracker
@@ -74,12 +74,14 @@
                 <td class="col-md-10" data-bind="text: Circuit"></td>
             </tr>
             <tr class="row">
-                <th class="col-md-2">Round</th>
+                <th class="col-md-2">Rounds</th>
                 <td class="col-md-10" data-bind="text: Round"></td>
+                
             <tr class="row">
                 <th class="col-md-2">Time</th>
                 <td class="col-md-10" data-bind="text: Time"></td>
             </tr>
+            
             <tr class="row">
                 <th class="col-md-2">Learn More About <span data-bind="text: Name"></span></th>
                 <td class="col-md-10"><a class="text-muted text-decoration-none" data-bind="attr: {href: Url, target:'blank'}"><i class="fa fa-external-link"></i> [<span class="" data-bind="text: Url"></span>]</a></td>
