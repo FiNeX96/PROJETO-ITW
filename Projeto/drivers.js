@@ -1,5 +1,5 @@
 ﻿// Autocomplete 
- $(document).ready(function () {
+$(document).ready(function () {
     $("#SearchText").autocomplete({
         minLength: 3,
         source: function (request, response) {
@@ -21,7 +21,32 @@
             });
         }
     });
+
+    $('#button').click(function () {
+        var nome = $('#SearchText').val();
+
+        $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
+            data: '',
+            dataType: "json",
+            sucess: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (nome == data[i].Name) {
+                        var id_driver = data[i].DriverId;
+                        window.open('./driverdetailsv2.html?id' + id_driver, '_self');
+                    }
+                }
+            },
+            error: function (result) {
+                alert(result.statusText);
+
+            }
+        });
+    });
 });
+
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
