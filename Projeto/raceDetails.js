@@ -2,7 +2,7 @@
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/Constructors/Constructor?id=');
+    self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/Races/Race?id=');
     self.displayName = 'Constructor Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
