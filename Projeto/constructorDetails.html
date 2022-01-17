@@ -82,15 +82,17 @@
                 <th colspan="2">Races Done: <span data-bind="text: Races().length"></span></th>
             </tr>
         </table>
+        <!-- /ko-->
         <br />
         <div style="width: 50%; float: left;">
             <h1>Drivers <i class="fa fa-user"></i></h1>
         </div>
+        <!--ko if:Races().length > 0 -->
         <div style="width: 50%; float: right;">
             <h1>Races <i class="fa fa-flag-checkered"></i> </h1>
         </div>
-        <!-- ko if:Drivers().length > 0 -->
-        <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; width: 30%; float: left;">
+        <!-- /ko-->
+        <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; width: 30%;float: left;">
             <thead class="bg-success text-light">
                 <tr>
                     <th scope="col">Id</th>
@@ -111,8 +113,7 @@
                 </tr>
             </tbody>
         </table>
-        <!-- /ko-->
-        <!-- ko if:Races().length > 0 -->
+        <!--ko if:Races().length > 0 -->
         <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; width: 50%; float: right;">
             <thead class="bg-success text-light">
                 <tr>
@@ -130,13 +131,14 @@
                     <td class="align-middle" data-bind="text:Year"></td>
                     <td class="align-middle" data-bind="text:Name"></td>
                     <td class="text-end">
-                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./racesDetails.html?id=' + RaceId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./raceDetails.html?id=' + RaceId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
                         <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + RaceId }" title="Selecione para adicionar aos favoritos"></i></button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <!-- /ko -->
+        <!-- /ko-->
+
 
     </div>
 

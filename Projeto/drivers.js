@@ -168,6 +168,7 @@ $(document).ready(function () {
 
 function myFunction() {
     // Declare variables
+    self.Name = ko.observable('');
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("SearchText");
     filter = input.value.toUpperCase();
