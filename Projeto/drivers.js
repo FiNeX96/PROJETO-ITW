@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
     });
 });
-
+    // Search feature
     $('#button_search').click(function () {
         console.log ($('#SearchText').val());
         var nome = $('#SearchText').val();
