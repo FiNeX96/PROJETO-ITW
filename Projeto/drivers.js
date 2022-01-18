@@ -23,6 +23,13 @@ $(document).ready(function () {
     });
 });
     // Search feature
+    $("#SearchText").keyup(function(event) {
+        if (event.keyCode === 13) {
+            console.log("oi")
+            $("#button_search").click();
+        }
+    });
+    
     $('#button_search').click(function () {
         console.log ($('#SearchText').val());
         var nome = $('#SearchText').val();
