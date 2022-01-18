@@ -21,8 +21,10 @@ $(document).ready(function () {
             });
         }
     });
+});
 
-    $('#button').click(function () {
+    $('#button_search').click(function () {
+        console.log ($('#SearchText').val());
         var nome = $('#SearchText').val();
 
         $.ajax({
@@ -31,11 +33,12 @@ $(document).ready(function () {
             url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
             data: '',
             dataType: "json",
-            sucess: function (data) {
+            success: function (data) {
+                console.log(data)
                 for (var i = 0; i < data.length; i++) {
                     if (nome == data[i].Name) {
                         var id_driver = data[i].DriverId;
-                        window.open('./driverDetailsv2.html?id=' + id_driver, '_self');
+                        window.open('./driverdetailsv2.html?id=' + id_driver);
                     }
                 }
             },
@@ -44,8 +47,8 @@ $(document).ready(function () {
 
             }
         });
-    });
 });
+
 
 // ViewModel KnockOut
 var vm = function () {
