@@ -20,37 +20,32 @@ $(document).ready(function () {
                 }
             });
         }
-    });  
-});
+    });
 
-$('#button').click(function () {
-    var nome = $('#SearchText').val();
-    console.log(nome);
+    $('#button').click(function () {
+        var nome = $('#SearchText').val();
 
-    $.ajax({
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + nome,
-        dataType: "json",
-        sucess: function (data) {
-            console.log("ola")
-            /*for (var i = 0; i < data.length; i++) {
-                console.log(i)
-                if (nome == data[i].Name) {
-                    var id_driver = data[i].DriverId;
-                     window.open('./driverdetailsv2.html?id=' + id_driver);
+        $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
+            data: '',
+            dataType: "json",
+            sucess: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (nome == data[i].Name) {
+                        var id_driver = data[i].DriverId;
+                        window.open('./driverDetailsv2.html?id=' + id_driver, '_self');
+                    }
                 }
-               
+            },
+            error: function (result) {
+                alert(result.statusText);
+
             }
-            */
-        },
-        error: function (result) {
-            alert(result.statusText);
-            console.log(result)
-        }
+        });
     });
 });
-
 
 // ViewModel KnockOut
 var vm = function () {
