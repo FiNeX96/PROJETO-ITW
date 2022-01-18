@@ -35,7 +35,7 @@ $(document).ready(function () {
                 for (var i = 0; i < data.length; i++) {
                     if (nome == data[i].Name) {
                         var id_driver = data[i].DriverId;
-                        window.open('./driverdetailsv2.html?id' + id_driver, '_self');
+                        window.open('./driverDetailsv2.html?id=' + id_driver, '_self');
                     }
                 }
             },

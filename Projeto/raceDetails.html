@@ -77,12 +77,12 @@
             <tr class="row">
                 <th class="col-md-2">Rounds</th>
                 <td class="col-md-10" data-bind="text: Round"></td>
-                
+
             <tr class="row">
                 <th class="col-md-2">Time</th>
                 <td class="col-md-10" data-bind="text: Time"></td>
             </tr>
-            
+
             <tr class="row">
                 <th class="col-md-2">Learn More About <span data-bind="text: Name"></span></th>
                 <td class="col-md-10"><a class="text-muted text-decoration-none" data-bind="attr: {href: Url, target:'blank'}"><i class="fa fa-external-link"></i> [<span class="" data-bind="text: Url"></span>]</a></td>
@@ -90,39 +90,50 @@
         </table>
         <!-- /ko-->
         <br />
-        <div style="width: 50%; float: left;">
-            <h1>Results</h1>
+        <div class="accordion-flush" id="accordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Results
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                    <div class="accordion-body">
+                        <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; float: left;">
+                            <thead class="bg-dark text-light">
+                                <tr>
+                                    <th scope="col">DriverId</th>
+                                    <th scope="col">Driver</th>
+                                    <th scope="col">Constructor</th>
+                                    <th scope="col">Grid</th>
+                                    <th scope="col">Position</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col" class="text-right"></th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: Results">
+                                <tr>
+                                    <td class="align-middle" data-bind="text:DriverId"></td>
+                                    <td class="align-middle" data-bind="text:DriverName"></td>
+                                    <td class="align-middle" data-bind="text:ConstructorName"></td>
+                                    <td class="align-middle" data-bind="text:Grid"></td>
+                                    <td class="align-middle" data-bind="text:Position"></td>
+                                    <td class="align-middle" data-bind="text:Status"></td>
+
+                                    <td class="text-end">
+                                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./driverdetailsv2.html?id=' + DriverId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                                        <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + DriverId }" title="Selecione para adicionar aos favoritos"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
-        <table class="table table-striped table-sm small " style="overflow-y: scroll;height: 500px; display: block; float: left;">
-            <thead class="bg-dark text-light">
-                <tr>
-                    <th scope="col">DriverId</th>
-                    <th scope="col">Driver</th>
-                    <th scope="col">Constructor</th>
-                    <th scope="col">Grid</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Status</th>
-                    <th scope="col" class="text-right"></th>
-                </tr>
-            </thead>
-            <tbody data-bind="foreach: Results">
-                <tr>
-                    <td class="align-middle" data-bind="text:DriverId"></td>
-                    <td class="align-middle" data-bind="text:DriverName"></td>
-                    <td class="align-middle" data-bind="text:ConstructorName"></td>
-                    <td class="align-middle" data-bind="text:Grid"></td>
-                    <td class="align-middle" data-bind="text:Position"></td>
-                    <td class="align-middle" data-bind="text:Status"></td>
-
-                    <td class="text-end">
-                        <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./driverdetailsv2.html?id=' + DriverId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
-                        <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + DriverId }" title="Selecione para adicionar aos favoritos"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
