@@ -1,4 +1,64 @@
-﻿var vm = function () {
+﻿// Autocomplete 
+$(document).ready(function () {
+    $("#SearchText").autocomplete({
+        minLength: 3,
+        source: function (request, response) {
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: 'http://192.168.160.58/Formula1/api/Search/Constructors?q=' + $('#SearchText').val(),
+                data: '',
+                dataType: "json",
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return item.Name
+
+                    }));
+                },
+                error: function (result) {
+                    alert(result.statusText);
+                }
+            });
+        }
+    });
+});
+    // Search feature ( search and enter both work )
+
+    var input = document.getElementById("SearchText");
+    input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button_search").click();
+}
+});  
+    $('#button_search').click(function () {
+        console.log ($('#SearchText').val());
+        var nome = $('#SearchText').val();
+
+        $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: 'http://192.168.160.58/Formula1/api/Search/Constructors?q=' + $('#SearchText').val(),
+            data: '',
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+                for (var i = 0; i < data.length; i++) {
+                    if (nome == data[i].Name) {
+                        var id_constructor = data[i].ContructorId;
+                        window.location.replace('./constructorDetails.html?id=' + id_constructor);
+                    }
+                }
+            },
+            error: function (result) {
+                alert(result.statusText);
+
+            }
+        });
+});
+
+
+var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;

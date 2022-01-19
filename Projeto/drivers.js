@@ -23,6 +23,7 @@ $(document).ready(function () {
     });
 });
     // Search feature ( search and enter both work )
+
     var input = document.getElementById("SearchText");
     input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
