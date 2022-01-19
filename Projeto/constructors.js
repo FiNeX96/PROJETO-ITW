@@ -46,7 +46,7 @@ $(document).ready(function () {
                 console.log(data)
                 for (var i = 0; i < data.length; i++) {
                     if (nome == data[i].Name) {
-                        var id_constructor = data[i].ContructorId;
+                        var id_constructor = data[i].ConstructorId;
                         window.location.replace('./constructorDetails.html?id=' + id_constructor);
                     }
                 }
