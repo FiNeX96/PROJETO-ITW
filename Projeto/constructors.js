@@ -10,6 +10,7 @@ $(document).ready(function () {
                 data: '',
                 dataType: "json",
                 success: function (data) {
+                    console.log("ola")
                     response($.map(data, function (item) {
                         return item.Name
 
