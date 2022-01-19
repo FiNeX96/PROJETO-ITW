@@ -99,6 +99,7 @@ var vm = function () {
 
         for (var i = 1; i <= size; i++)
             list.push(i + step);
+        console.log(list);
         return list;
     };
     //--- Page Events
