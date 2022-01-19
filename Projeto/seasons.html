@@ -56,7 +56,9 @@
         <div class="border-bottom pt-4 pb-2 mb-3">
             <h2>Formula 1 Seasons</h2>
         </div>
-        <div class="card center text-center border-dark" style="width: 35rem;height: 35rem;">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="card center text-center border-dark">
             <div class="card-body">
               <div class="card-title">
                  <!-- <a href = "#">Previous</a>-->
@@ -66,7 +68,7 @@
                     <span style = "float:left;"data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
               </div>
               <nav aria-label="Page navigation example">
-                <ul class="pagination">
+                <ul class="pagination justify-content-center">
                 <!-- ko if: currentPage() >= 5 -->
                 <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './seasons.html?page=' + '1',  rel:'prev'}">⇤</a></li>
                  <!-- /ko -->
@@ -84,19 +86,54 @@
               </nav>
               
         </div>
-        <div class="card-text card-sm-12">
-             <h5>ola</h5>
-              <h5>ola</h5>
-              <h5>ola</h5>
-              <h5>ola</h5>
-              <h5>ola</h5>
-              <h5>ola</h5>
-              <h5>ola</h5>
+        <div class="card-text card-sm-12" style = "text-align:center">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Drivers</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" data-bind="text: Drivers">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Constructors</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" data-bind="text: Constructors">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Countries</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" data-bind="text: Countries">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Races</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" data-bind="text: Races">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Winner</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" data-bind="text: Winner">
+                </div>
+            </div>
+            <hr>
             <h5 data-bind="text: Url"></h1>
         </p>
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
       </div>
+    </div>
+    </div>
     </div>
                <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

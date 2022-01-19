@@ -1,15 +1,20 @@
-﻿var vm = function () {
+﻿var vm = function knockoutvm() {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/Seasons');
+    self.baseUri2 = ko.observable('http://192.168.160.58/Formula1/api/Statistics/Season?year=');
+    self.baseUri3 = ko.observable('http://192.168.160.58/Formula1/api/Seasons/Season?year=');
     self.error = ko.observable('');
-    self.displayYear = ko.observable ()
+    self.displayYear = ko.observable ();
     self.passingMessage = ko.observable('');
-    self.Url = ko.observable('')
-    self.records = ko.observableArray([]);
+    self.Url = ko.observable('');
+    self.Races = ko.observable();
+    self.Countries = ko.observable();
+    self.Drivers = ko.observable();
+    self.Winner = ko.observable ();
+    self.Constructors = ko.observable()
     self.currentPage = ko.observable(1);
-    self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
     self.previousPage = ko.computed(function () { 
@@ -21,21 +26,26 @@
     self.totalPages = ko.observable(72);
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getDrivers...');
+        console.log('CALL: getSeason...');
        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + 1;
         ajaxHelper(composedUri, 'GET').done(function (data) {
+           hideLoading();
            console.log(data);
-            hideLoading();
            self.displayYear(data.List[0].Year)
            self.Url(data.List[0].Url)
-           self.records(data.List);
            self.currentPage(data.CurrentPage);
            self.hasNext(data.HasNext);
-           self.hasPrevious(data.HasPrevious);
-           
-           self.totalPages(data.PageCount);
-           self.totalRecords(data.Total);
-           
+           self.hasPrevious(data.HasPrevious); 
+           self.baseUri2('http://192.168.160.58/Formula1/api/Statistics/Season?year=' + data.List[0].Year)
+           self.baseUri3('http://192.168.160.58/Formula1/api/Seasons/Season?year=' + data.List[0].Year)
+        ajaxHelper(self.baseUri2(), 'GET').done(function (data) {
+               console.log(data)
+               self.Countries(data.Countries)
+               self.Races (data.Races)
+               self.Constructors(data.Constructors)
+               self.Drivers(data.Drivers)
+               self.Winner(data.DriverStandings[0].Name)
+           });
        });
     };
 
