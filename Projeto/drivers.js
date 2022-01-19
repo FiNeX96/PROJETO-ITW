@@ -203,7 +203,7 @@ $(document).ready(function () {
 });
 
 
-function myFunction() {
+/*function myFunction() {
     // Declare variables
     self.Name = ko.observable('');
     var input, filter, table, tr, td, i, txtValue;
@@ -222,6 +222,6 @@ function myFunction() {
             }
         }
     }
-}
+}*/
 
 
