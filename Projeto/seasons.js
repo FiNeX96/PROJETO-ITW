@@ -1,4 +1,4 @@
-﻿var vm = function knockoutvm() {
+﻿var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
