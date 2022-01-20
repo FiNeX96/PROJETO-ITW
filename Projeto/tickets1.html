@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
 </head>
-<body style="background-image: url()">
+<body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="padding-right:30px;font-weight:bold">
@@ -55,13 +55,13 @@
     <div class='container'>
         <ul class="nav nav-tabs">
             <li class="nav-item2">
-                <a class="nav-link active" style="background-color: black;" aria-current="page" href="#">Dados</a>
+                <a class="nav-link disabled" style="background-color: grey ;" href="#" tabindex="-1" aria-disabled="true">Dados</a>
             </li>
             <li class="nav-item2">
                 <a class="nav-link disabled" aria-disabled="true" href="#"></a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link disabled" style="background-color: grey ;" href="#" tabindex="-1" aria-disabled="true">Lugar</a>
+                <a class="nav-link active" style="background-color: black;" aria-current="page" href="#">Lugar</a>
             </li>
             <li class="nav-item2">
                 <a class="nav-link disabled" aria-disabled="true" href="#"></a>
@@ -72,36 +72,11 @@
         </ul>
         <br />
         <form>
-            <div class="form-group col-md-6">
-                <label for="inputEmail">Email</label>
-                <input class="form-control" type="text" name="Email" id="inputEmail" placeholder="Email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                <div class="d-none text-danger col-form-label" id="EmailError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (@ obrigatório).</div>
-            </div>
-            <br />
-            <div class="form-group col-md-6">
-                <label for="inputName">Name</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Full Name">
-                <small id="nameHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
-                <div class="d-none text-danger col-form-label" id="NameError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 3 letras).</div>
-            </div>
-            <br />
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputAddress">Address</label>
-                    <textarea type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></textarea>
-                    <small id="adressHelp" class="form-text text-muted">optional</small>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                    <small id="cityHelp" class="form-text text-muted">optional</small>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                    <small id="zipHelp" class="form-text text-muted">optional.</small>
-                </div>
+            <div class="row">
+                <p>People:</p>
+                <button id="update2" style="width: 40px; border-radius: 10px; float:left;" type="button">-</button>
+                <div id="counter" style="width: 40px;">1</div>
+                <button id="update1" style="width: 40px; border-radius: 10px;" type="button">+</button>
             </div>
             <br />
             <div class="form-group col-md-6">
@@ -115,13 +90,12 @@
                 </select>
             </div>
             <br />
-            <a href="tickets1.html" type="submit" id="submit" class="btn btn-primary">Continue</a>
+            <button type="submit" class="btn btn-primary">Choose Places</button>
         </form>
     </div>
-
-    <script src="../Scripts/bootstrap.bundle.min.js"></script>
-    <script src="../Scripts/knockout-3.5.1.js"></script>
-    <script src="../Scripts/jquery-3.6.0.min.js"></script>
-    <script src="tickets.js"></script>
+        <script src="../Scripts/bootstrap.bundle.min.js"></script>
+        <script src="../Scripts/knockout-3.5.1.js"></script>
+        <script src="../Scripts/jquery-3.6.0.min.js"></script>
+        <script src="tickets.js"></script>
 </body>
 </html>
