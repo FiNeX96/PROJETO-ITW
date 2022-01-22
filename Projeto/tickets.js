@@ -1,6 +1,7 @@
-﻿$('document').ready(function () {
+﻿var count = 1;
+$('document').ready(function () {
 
-    var count = 1;
+    
 
     $("#update1").click(function () {
         if (count > 19) {
@@ -61,12 +62,14 @@
         return retVal;
     });
 
-    var posição = $('input[name="inlineRadioOptions"]').val().length
-    var total = 0
+})
 
+
+    function pricechecker(){
+    var posição = $('input[name="inlineRadioOptions"]:checked').length
     if (posição > 0) {
-        total = parseFloat($("input[type='radio'][name='inlineRadioOptions']:checked").val()) * count;
-        console.log('total')
+        total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count);
+        console.log(total)
         $('#total').text(total);
     }
-})
+}
