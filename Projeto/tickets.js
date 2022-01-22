@@ -1,9 +1,9 @@
 ﻿$('document').ready(function () {
 
-    var count = 0;
+    var count = 1;
 
     $("#update1").click(function () {
-        if (count > 49) {
+        if (count > 19) {
             $('#counter').text(count);
         }
         else {
@@ -61,4 +61,12 @@
         return retVal;
     });
 
+    var posição = $('input[name="inlineRadioOptions"]').val().length
+    var total = 0
+
+    if (posição > 0) {
+        total = parseFloat($("input[type='radio'][name='inlineRadioOptions']:checked").val()) * count;
+        console.log('total')
+        $('#total').text(total);
+    }
 })

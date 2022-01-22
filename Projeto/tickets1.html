@@ -73,24 +73,35 @@
         <br />
         <form>
             <div class="row">
-                <p>People:</p>
+                <div><b>People:</b></div>
                 <button id="update2" style="width: 40px; border-radius: 10px; float:left;" type="button">-</button>
                 <div id="counter" style="width: 40px;">1</div>
                 <button id="update1" style="width: 40px; border-radius: 10px;" type="button">+</button>
             </div>
             <br />
-            <div class="form-group col-md-6">
-                <label for="inputRace">Race</label>
-                <select id="inputRace" class="form-control">
-                    <option selected>Choose The Race</option>
-                    <option>uma delas</option>
-                    <option>uma delas</option>
-                    <option>uma delas</option>
-                    <option>uma delas</option>
-                </select>
+            <div><b>Position:</b></div>
+            <br />
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="367.14">
+                <label class="form-check-label" for="inlineRadio1">Main Grandstand (from 367,14€)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="261.89">
+                <label class="form-check-label" for="inlineRadio2">Turn 1 Grandstand (from 261,89€)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="154.50">
+                <label class="form-check-label" for="inlineRadio3">Victory Grandstand (from 154,50€)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="400.39">
+                <label class="form-check-label" for="inlineRadio4">Premium Hospitality (from 400,39€)</label>
             </div>
             <br />
-            <button type="submit" class="btn btn-primary">Choose Places</button>
+            <br />
+            <a href="tickets.html" type="button" id="back" class="btn btn-secondary">Go back</a>
+            <a href="tickets2.html" type="submit" id="submit1" class="btn btn-dark">Choose Places</a>
+            <div style="width: 40%; float: right;"><button type="button" class="btn btn-outline-dark" disabled>Total to pay:</button><span id="total" style="border-radius: 10px; border:1px; padding:30px;">0.00€</span></div>
         </form>
     </div>
         <script src="../Scripts/bootstrap.bundle.min.js"></script>
