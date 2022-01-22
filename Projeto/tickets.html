@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
 </head>
-<body style="background-image: url()">
+<body style="background-image: url(https://www.formula1.com/content/dam/fom-website/manual/Getty/Singapore_2019/Sunday/GettyImages-1176346667.jpg.transform/9col/image.jpg); background-repeat: no-repeat; background-size: cover; background-position: center">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="padding-right:30px;font-weight:bold">
@@ -72,21 +72,21 @@
         </ul>
         <br />
         <form>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6" style="background-color:white; padding: 20px; border-radius: 10px;">
                 <label for="inputEmail">Email</label>
                 <input class="form-control" type="text" name="Email" id="inputEmail" placeholder="Email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                <div class="d-none text-danger col-form-label" id="EmailError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (@ obrigatório).</div>
+                <div class="d-none text-danger col-form-label" id="EmailError"><i class="fa fa-exclamation-triangle"></i> This Fiels is Mandatory (@ mandatory).</div>
             </div>
             <br />
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6" style="background-color: white; padding: 20px; border-radius: 10px;">
                 <label for="inputName">Name</label>
                 <input type="text" class="form-control" id="inputName" placeholder="Full Name">
                 <small id="nameHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
-                <div class="d-none text-danger col-form-label" id="NameError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 3 letras).</div>
+                <div class="d-none text-danger col-form-label" id="NameError"><i class="fa fa-exclamation-triangle"></i> This Fiels is Mandatory (Min: 3 letters).</div>
             </div>
             <br />
-            <div class="form-row">
+            <div class="form-row" style="background-color: white; padding: 20px; border-radius: 10px;">
                 <div class="form-group col-md-6">
                     <label for="inputAddress">Address</label>
                     <textarea type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></textarea>
@@ -104,15 +104,16 @@
                 </div>
             </div>
             <br />
-            <div class="form-group col-md-6">
-                <label for="inputRace">Race</label>
-                <select id="inputRace" class="form-control">
-                    <option selected>Choose The Race</option>
-                    <option>uma delas</option>
-                    <option>uma delas</option>
-                    <option>uma delas</option>
-                    <option>uma delas</option>
+            <div class="form-group col-md-6" style="background-color: white; padding: 20px; border-radius: 10px;">
+                <label for="Race">Race</label>
+                <select id="Race" class="form-control">
+                    <option value="0" selected>Choose The Race</option>
+                    <option value="1">uma delas</option>
+                    <option value="2">uma delas</option>
+                    <option value="3">uma delas</option>
+                    <option value="4">uma delas</option>
                 </select>
+                <div class="d-none text-danger col-form-label" id="RaceError"><i class="fa fa-exclamation-triangle"></i>This Field is Mandatory (Choose a Race)</div>
             </div>
             <br />
             <a href="tickets1.html" type="submit" id="submit" class="btn btn-primary">Continue</a>
