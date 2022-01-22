@@ -58,16 +58,13 @@ $('document').ready(function () {
 
         return retVal;
     });
-
 })
+
     function pricechecker(){
     var posição = $('input[name="inlineRadioOptions"]:checked').length
-    console.log(count)
     if (posição > 0) {
-        total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count);
-        console.log(total)
+        total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count).toFixed(2);
         $('#total').text(total + "€");
-        console.log(count);
     }
 }
 
