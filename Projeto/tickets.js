@@ -10,8 +10,9 @@
             count++;
             $('#counter').text(count);
         }
+    })
 
-        $("#update2").click(function () {
+    $("#update2").click(function () {
             if (count <= 1) {
                 $('#counter').text(count);
             }
@@ -19,7 +20,6 @@
                 count--;
                 $('#counter').text(count);
             }
-        })
     })
 
     $('#submit').click(function () {
