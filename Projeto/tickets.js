@@ -70,6 +70,6 @@ $('document').ready(function () {
     if (posição > 0) {
         total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count);
         console.log(total)
-        $('#total').text(total);
+        $('#total').text(total + "€");
     }
 }
