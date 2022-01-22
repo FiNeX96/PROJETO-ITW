@@ -1,8 +1,5 @@
 ﻿var count = 1;
 $('document').ready(function () {
-
-    
-
     $("#update1").click(function () {
         if (count > 19) {
             $('#counter').text(count);
@@ -63,13 +60,14 @@ $('document').ready(function () {
     });
 
 })
-
-
     function pricechecker(){
     var posição = $('input[name="inlineRadioOptions"]:checked').length
+    console.log(count)
     if (posição > 0) {
         total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count);
         console.log(total)
         $('#total').text(total + "€");
+        console.log(count);
     }
 }
+
