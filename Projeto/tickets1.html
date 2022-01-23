@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
 </head>
-<body>
+<body style="background-image: url(https://www.formula1.com/content/dam/fom-website/manual/Getty/Singapore_2019/Sunday/GettyImages-1176346667.jpg.transform/9col/image.jpg); background-repeat: no-repeat; background-size: cover; background-position: center">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="padding-right:30px;font-weight:bold">
@@ -61,7 +61,7 @@
                 <a class="nav-link disabled" aria-disabled="true" href="#"></a>
             </li>
             <li class="nav-item2">
-                <a class="nav-link active" style="background-color: black;" aria-current="page" href="#">Lugar</a>
+                <a class="nav-link active" style="background-color: black;" aria-current="page" href="#">Places</a>
             </li>
             <li class="nav-item2">
                 <a class="nav-link disabled" aria-disabled="true" href="#"></a>
@@ -71,7 +71,7 @@
             </li>
         </ul>
         <br />
-        <form>
+        <form style="width: 55%; border-radius: 20px; padding: 50px; position: center; background-color: white;">
             <div class="row">
                 <div><b>People:</b></div>
                 <button id="update2" onclick="setTimeout(pricechecker,50)" style="width: 40px; border-radius: 10px; float:left;" type="button">-</button>
@@ -97,6 +97,7 @@
                 <input class="form-check-input" onclick="setTimeout(pricechecker,50)" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="400.39">
                 <label class="form-check-label" for="inlineRadio4">Premium Hospitality (from 400,39€)</label>
             </div>
+            <div class="d-none text-danger col-form-label" id="positionError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Escolha uma cor).</div>
             <br />
             <br />
             <a href="tickets.html" type="button" id="back" class="btn btn-secondary">Go back</a>
