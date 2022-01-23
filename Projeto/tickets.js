@@ -58,6 +58,21 @@ $('document').ready(function () {
 
         return retVal;
     });
+
+    $('#submit1').click(function () {
+        var posição = $('input[name="inlineRadioOptions"]:checked').length;
+        var retVal = true;
+        if (posição <= 0) {
+            retVal = false;
+            $('#positionError').addClass('d-block');
+            $('#positionError').removeClass('d-none');
+        }
+        else {
+            $('#positionError').removeClass('d-block');
+            $('#positionError').addClass('d-none');
+        }
+        return retVal;
+    })
 })
 
     function pricechecker(){
@@ -65,6 +80,6 @@ $('document').ready(function () {
     if (posição > 0) {
         total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count).toFixed(2);
         $('#total').text(total + "€");
-    }
+        }
 }
 
