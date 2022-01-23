@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-10">
                                     <h5>Amount</h5>
-                                    <h5 style="margin-bottom: 1rem;">14.99€</h5>
+                                    <h5 style="margin-bottom: 1rem;" id=totalpreço></h5>
                                 </div>
                             </div>
                         </div>
@@ -113,6 +113,11 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
-    <script src="tickets.js"></script>
+    <script>
+        var total = sessionStorage.getItem("total");
+        console.log(total)
+        $(totalpreço).text(total+"€")
+        
+    </script>
 </body>
 </html>
