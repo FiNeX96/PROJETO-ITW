@@ -71,7 +71,7 @@
             </li>
         </ul>
         <br />
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Launch demo modal
         </button>
         <div class="modal fade" id="exampleModal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="exampleModalLabel">
@@ -84,12 +84,12 @@
                     <div class="modal-body">
                         <div class="container container-inside">
                             <div class="row">
-                                <div class="col-sm-12 col-md-9">
+                                <div class="col-sm-9 col-md-6">
                                     <h5>Entity</h5>
                                     <h5 style="margin-bottom: 1rem;">17826</h5>
                                 </div>
                                 <div class="col-sm-12 col-md-3">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpIZmXfunMJPP9TTP_WxcmNYsmCCYgkbU4Eo6GVR9n5MDm8DwEDXzrC6OiqkUvD3sQ3CM&usqp=CAU" alt="">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpIZmXfunMJPP9TTP_WxcmNYsmCCYgkbU4Eo6GVR9n5MDm8DwEDXzrC6OiqkUvD3sQ3CM&usqp=CAU" style="width:150px;height:150px;" alt="Visa">
                                 </div>
                             </div>
                             <div class="row">
@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-10">
                                     <h5>Amount</h5>
-                                    <h5 style="margin-bottom: 1rem;">14.99€</h5>
+                                    <h5 style="margin-bottom: 1rem;" id = "totalpreço"></h5>
                                 </div>
                             </div>
                         </div>
@@ -113,6 +113,10 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
-    <script src="tickets.js"></script>
+    <script>
+         var total = sessionStorage.getItem("total");
+        console.log(total)
+        $(totalpreço).text(total+"€")
+    </script>
 </body>
 </html>

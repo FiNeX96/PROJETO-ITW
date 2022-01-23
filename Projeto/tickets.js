@@ -80,6 +80,7 @@ $('document').ready(function () {
     if (posição > 0) {
         total = parseFloat($("input[name='inlineRadioOptions']:checked").val() * count).toFixed(2);
         $('#total').text(total + "€");
+        sessionStorage.setItem("total", total);
         }
 }
 
