@@ -13,6 +13,7 @@
     self.Countries = ko.observable();
     self.Drivers = ko.observable();
     self.Winner = ko.observable ();
+    self.CWinner = ko.observable ();
     self.Constructors = ko.observable()
     self.currentPage = ko.observable(1);
     self.hasPrevious = ko.observable(false);
@@ -45,10 +46,10 @@
                self.Constructors(data.Constructors)
                self.Drivers(data.Drivers)
                self.Winner(data.DriverStandings[0].Name)
+               self.CWinner(data.ConstructorStandings[0].Name)
            });
        });
     };
-
     setFavorites = function () {
         botao = $(event.target).hasClass("btn-danger");
         if (botao == true) {
