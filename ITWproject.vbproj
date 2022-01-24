@@ -121,6 +121,7 @@
     <Content Include="Aulas\Aula09\Ex1.html" />
     <Content Include="Aulas\Aula09\Ex2.html" />
     <Content Include="Aulas\Aula09\swagcat.jpg" />
+    <Content Include="Aulas\Aula09\teste.html" />
     <Content Include="Aulas\Aula10\conference.html" />
     <Content Include="Aulas\Aula10\conference.js" />
     <Content Include="Content\bootstrap-grid.css" />
