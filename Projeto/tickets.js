@@ -30,6 +30,7 @@ $('document').ready(function () {
         else {
             $('#NameError').removeClass('d-block');
             $('#NameError').addClass('d-none');
+            $('#barra').css({ 'width': '50%' });
         }
 
 
@@ -42,6 +43,7 @@ $('document').ready(function () {
         else {
             $('#EmailError').removeClass('d-block');
             $('#EmailError').addClass('d-none');
+            $('#barra').css({ 'width': '25%' });
         }
 
 
@@ -54,6 +56,7 @@ $('document').ready(function () {
         else {
             $('#RaceError').removeClass('d-block');
             $('#RaceError').addClass('d-none');
+            $('#barra').css({ 'width': '75%' });
         }
 
         return retVal;
@@ -82,4 +85,5 @@ $('document').ready(function () {
         $('#total').text(total + "€");
         }
 }
+
 
