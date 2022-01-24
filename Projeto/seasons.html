@@ -58,14 +58,14 @@
             <h2>Formula 1 Seasons</h2>
         </div>
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="card center text-center border-dark">
             <div class="card-body">
                 <div class="card-title">
                     <h1 class="card-header bg-success" data-bind="text: displayYear"></h1>
                 </div>
                 <div class="form-group input-group rounded" style="width: 30%; float: left; padding: 5px;">
-                    <input class="form-control me-2" placeholder="Search By Year" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 1px;" />
+                    <input class="form-control me-2" placeholder="Search Year" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 1px;" />
                     <button class="btn btn-outline-dark" id="button_search" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-search"></i></button>
                 </div>
                 <nav aria-label="Page navigation example">
@@ -137,11 +137,16 @@
             </div>
             <hr>
             <h5><a data-bind="attr: { href: Url }">Wikipedia URL</a> </h5>
-      
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
       </div>
     </div>
+    </div>
+    <div class ="col-lg-6 col-sm-6 col-md-6" style="border:dotted 3px red;">
+
+
+
+
+
+
     </div>
     </div>
                <!-- Modal -->
@@ -163,5 +168,19 @@
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script src="seasons.js"></script>
+    <script>
+        $("#button_search").click(function(){
+        var box = $("#SearchText").val();
+        console.log(box)
+        var value = box - 1949
+        console.log(value)
+        if (value < 1 || value > 72) {
+            alert("Error 404 - No Seasons Available in " + box)
+        } 
+        else{
+            window.location.replace("seasons.html?page=" + value)
+        }
+        });
+    </script>
 </body>
 </html>

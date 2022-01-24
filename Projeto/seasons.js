@@ -24,6 +24,7 @@
     self.nextPage = ko.computed(function () {
         return self.currentPage() * 1 + 1;
     }, self);
+    totalPages = ko.observable(72)
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getSeason...');
