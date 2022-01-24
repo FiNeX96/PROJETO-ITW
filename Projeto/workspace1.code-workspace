@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "ITWprojecto",
+			"path": ".."
+		},
+		{
+			"name": "fp",
+			"path": "..\\..\\..\\fp"
+		},
+		{
+			"name": "Trabalho-de-MAS",
+			"path": "..\\..\\..\\Trabalho-de-MAS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Trabalho-de-MAS"
+	}
+}
