@@ -100,7 +100,6 @@ var vm = function () {
 
         for (var i = 1; i <= size; i++)
             list.push(i + step);
-        console.log(list);
         return list;
     };
     //--- Page Events
@@ -195,12 +194,34 @@ var vm = function () {
     else {
         self.activate(pg);
     }
+  self.toggleFavourite = function(id) {
+      if (self.favourites.indexOf(Id)== -1 ){
+          self.favourites.push(id);
+      }else{
+          self.favourites.remove(id);
+      }
+      localStorage.setItem("fav", JSON.stringify(self.favourites()));
+      }
+      self.SetFavourites = function() {
+          let storage;
+          try {
+              storage = JSON.parse(localStorage.getItem("fav"));
+          } catch (e) {
+              ;
+          }
+          if (Array.isArray(storage)) {
+              self.favourites(storage)
+          }
+      }
+      console.log(localStorage)
 };
 
 $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
+
+
 
 
 /*function myFunction() {
