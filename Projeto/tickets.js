@@ -30,20 +30,21 @@ $('document').ready(function () {
         else {
             $('#NameError').removeClass('d-block');
             $('#NameError').addClass('d-none');
-            $('#barra').css({ 'width': '50%' });
+            $('#barra').css({ 'width': '40%' });
         }
 
 
 
-        if ($('#inputEmail').val().indexOf('@') <= -1) {
+        if ($('#inputEmail').val().slice(-1) == "@") {
             retVal = false;
             $('#EmailError').addClass('d-block');
             $('#EmailError').removeClass('d-none');
+            console.log($('#inputEmail').val().indexOf('@'))
         }
         else {
             $('#EmailError').removeClass('d-block');
             $('#EmailError').addClass('d-none');
-            $('#barra').css({ 'width': '25%' });
+            $('#barra').css({ 'width': '20%' });
         }
 
 
@@ -56,7 +57,7 @@ $('document').ready(function () {
         else {
             $('#RaceError').removeClass('d-block');
             $('#RaceError').addClass('d-none');
-            $('#barra').css({ 'width': '75%' });
+            $('#barra').css({ 'width': '60%' });
         }
 
         return retVal;

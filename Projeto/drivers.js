@@ -1,37 +1,5 @@
-﻿// Autocomplete 
-$(document).ready(function () {
-    $("#SearchText").autocomplete({
-        minLength: 3,
-        source: function (request, response) {
-            $.ajax({
-                type: "GET",
-                contentType: "application/json; charset=utf-8",
-                url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
-                data: '',
-                dataType: "json",
-                success: function (data) {
-                    response($.map(data, function (item) {
-                        return item.Name
-
-                    }));
-                },
-                error: function (result) {
-                    alert(result.statusText);
-                }
-            });
-        }
-    });
-});
-    // Search feature ( search and enter both work )
-
-    var input = document.getElementById("SearchText");
-    input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-    event.preventDefault();
-    document.getElementById("button_search").click();
-}
-});  
-    $('#button_search').click(function () {
+﻿ 
+    /*$('#button_search').click(function () {
         console.log ($('#SearchText').val());
         var nome = $('#SearchText').val();
 
@@ -56,7 +24,7 @@ $(document).ready(function () {
             }
         });
 });
-
+*/
 
 // ViewModel KnockOut
 var vm = function () {
@@ -73,6 +41,7 @@ var vm = function () {
     self.pagesize = ko.observable(20);
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
+    self.favourites = ko.observableArray([]) 
     self.hasNext = ko.observable(false);
     self.previousPage = ko.computed(function () {
         return self.currentPage() * 1 - 1;
@@ -102,6 +71,38 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+    $("#SearchText").autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: 'http://192.168.160.58/Formula1/api/Search/Drivers?q=' + $('#SearchText').val(),
+                data: '',
+                dataType: "json",
+                success: function (data) {
+                    autocompleteRecords = data;
+                    response($.map(data, function (item) {
+                        return item.Name;
+                    }));
+                },
+                error: function (result) {
+                    alert(result.statusText);
+                }
+            });
+        },
+        select: function (event, ui) {
+            const search = ui.item.value;
+            const newRecords = [];
+
+            for (const d of autocompleteRecords) {
+                if (d.Name === search) {
+                    newRecords.push(d);
+                }
+            }
+            self.records(newRecords);
+        }
+    });
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getDrivers...');
@@ -116,6 +117,7 @@ var vm = function () {
            self.pagesize(data.PageSize)
            self.totalPages(data.PageCount);
            self.totalRecords(data.Total);
+           self.SetFavourites(  )
            
        });
     };
@@ -149,6 +151,7 @@ var vm = function () {
         });
     }
 
+    
     function sleep(milliseconds) {
         const start = Date.now();
         while (Date.now() - start < milliseconds);
@@ -195,7 +198,7 @@ var vm = function () {
         self.activate(pg);
     }
   self.toggleFavourite = function(id) {
-      if (self.favourites.indexOf(Id)== -1 ){
+      if (self.favourites.indexOf(id)== -1 ){
           self.favourites.push(id);
       }else{
           self.favourites.remove(id);
