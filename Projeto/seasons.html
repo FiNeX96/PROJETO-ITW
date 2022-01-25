@@ -139,8 +139,8 @@
             <h5>
                 <a data-bind="attr: { href: Url }">Wikipedia URL</a> </h5>
                 <div class ="button wrapper" >
-                <button id="showDStand" class = "btn default btn-primary btn-sm">Show Driver Standings</button>
-                <button id="showCStand" class = "btn default btn-primary btn-sm">Show Constructor Standings</button>
+                <button id="showDStand" class = "btn default btn-primary btn-sm"> Driver Standings</button>
+                <button id="showCStand" class = "btn default btn-primary btn-sm"> Constructor Standings</button>
                 <button id="Hide" class = "btn default btn-primary btn-sm d-none ">Hide Standings</button>
                 </div>  
       </div>
@@ -210,7 +210,7 @@
         var value = box - 1949
         console.log(value)
         if (value < 1 || value > 72) {
-            alert("Error 404 - No Seasons Available in " + box)
+            alert("Error 404 - No Seasons Available in " + box )
         } 
         else{
             window.location.replace("seasons.html?page=" + value)
