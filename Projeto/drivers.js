@@ -66,8 +66,8 @@ var vm = function () {
                 }
             });
         },
-        // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO WTV)
-            select: function () {
+        // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO)
+            select: function (event, ui) {
             console.log($("#SearchText").val())
             const search = $("#SearchText").val();
             const newRecords = [];
