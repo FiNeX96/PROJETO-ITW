@@ -14,6 +14,8 @@
     self.Drivers = ko.observable();
     self.Winner = ko.observable ();
     self.CWinner = ko.observable ();
+    self.records = ko.observableArray([]);
+    self.records2 = ko.observableArray([]);
     self.Constructors = ko.observable()
     self.currentPage = ko.observable(1);
     self.hasPrevious = ko.observable(false);
@@ -41,6 +43,8 @@
            self.baseUri3('http://192.168.160.58/Formula1/api/Seasons/Season?year=' + data.List[0].Year)
         ajaxHelper(self.baseUri2(), 'GET').done(function (data) {
                console.log(data)
+               self.records(data.DriverStandings)
+               self.records2(data.ConstructorStandings)
                self.Countries(data.Countries)
                self.Races (data.Races)
                self.Constructors(data.Constructors)
@@ -130,3 +134,29 @@ $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
+
+
+$(document).ready(function(){
+$("#showDStand").click(function(){
+  $("#tableDStand").removeClass("d-none")
+  $("#tableDStand").addClass("d-block")
+  $("#tableCStand").addClass("d-none");
+  $("#Hide").removeClass("d-none")
+  $("#Hide").addClass("d-block")
+})
+$("#showCStand").click(function(){
+    $("#tableCStand").removeClass("d-none")
+    $("#tableCStand").addClass("d-block");
+    $("#tableDStand").addClass("d-none");
+    $("#Hide").removeClass("d-none")
+    $("#Hide").addClass("d-block")
+})
+$("#Hide").click(function(){
+    $("#tableCStand").removeClass("d-block");
+    $("#tableCStand").addClass("d-none");
+    $("#tableDStand").removeClass("d-block");
+    $("#tableDStand").addClass("d-none");
+    $("#Hide").removeClass("d-block")
+    $("#Hide").addClass("d-none")
+})
+})

@@ -136,19 +136,54 @@
                 </div>
             </div>
             <hr>
-            <h5><a data-bind="attr: { href: Url }">Wikipedia URL</a> </h5>
+            <h5>
+                <a data-bind="attr: { href: Url }">Wikipedia URL</a> </h5>
+                <div class ="button wrapper" >
+                <button id="showDStand" class = "btn default btn-primary btn-sm">Show Driver Standings</button>
+                <button id="showCStand" class = "btn default btn-primary btn-sm">Show Constructor Standings</button>
+                <button id="Hide" class = "btn default btn-primary btn-sm d-none ">Hide Standings</button>
+                </div>  
       </div>
     </div>
     </div>
-    <div class ="col-lg-6 col-sm-6 col-md-6" style="border:dotted 3px red;">
-
-
-
-
-
-
+    <div class ="col-lg-6 col-sm-6 col-md-6">
+        <table class="table d-none"  id = "tableDStand" style="width:460px;position:absolute;border:dotted 3px red;height:550px;overflow-y:scroll">
+            <thead>
+              <tr>
+                <th scope="col"style="padding-right:50px;text-align:center">Position</th>
+                <th scope="col"style="padding-right:50px;text-align:center">ID</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody data-bind="foreach: records">
+              <tr>
+                <th scope="row" data-bind="text: Position"></th>
+                <td data-bind="text: DriverId"></td>
+                <td data-bind="text: Name"></td>
+              </td>
+              </tr>
+              </tbody>
+              </table>
+              <table class="table d-none" id = "tableCStand" style="width:460px;position:absolute;border:dotted 3px red;height:550px !important;overflow-y: scroll;">
+                <thead>
+                  <tr>
+                    <th scope="col"style="padding-right:50px;text-align:center">Points</th>
+                    <th scope="col"style="padding-right:50px;text-align:center">Id</th>
+                    <th scope="col">Constructor Name</th>
+                  </tr>
+                </thead>
+                <tbody data-bind="foreach: records2">
+                  <tr>
+                    <th scope="row" data-bind="text: Points"></th>
+                    <td data-bind="text: ConstructorId"></td>
+                    <td data-bind="text: Name"></td>
+                  </td>
+                  </tr>
+                  </tbody>
+                  </table>
+                  </div>
     </div>
-    </div>
+    
                <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
