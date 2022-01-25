@@ -4,6 +4,7 @@
     var self = this;
     var listfavs = [];
     self.baseUri = ko.observable('http://192.168.160.58/Formula1/api/Circuits');
+    self.baseUri2 = ko.observable('http://192.168.160.58/Formula1/api/Circuits/Locations');
     self.displayName = 'Circuits List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
@@ -133,6 +134,35 @@
     else {
         self.activate(pg);
     }
+
+    $("#mapid").css("height", window.innerHeight - 214);
+    $(window).resize(function () {
+        $("#mapid").css("height", window.innerHeight - 214);
+    });
+    var mymap = L.map('mapid').setView([36.75, -17], 6);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2JyaXN0IiwiYSI6ImNreXVuc2NnazFwNnAybnA2cGFhbjJ3M3AifQ.VIsA_yNxSGwPCduC9xWDpg', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+    //--- Toooooodos os pontos
+    L.marker([39.458190000, -31.130100000], { opacity: 0.80 })
+        .bindTooltip('Flores (Aer&#xF3;dromo)').openTooltip()
+        .addTo(mymap);
+    //--- (…)
+    L.marker([39.466666670, -8.050000000], { opacity: 0.80 })
+        .bindTooltip('Alvega').openTooltip()
+        .addTo(mymap);
+    var popup = L.popup();
+    mymap.on('click', function (e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(mymap);
+    });
 };
 
 $(document).ready(function () {

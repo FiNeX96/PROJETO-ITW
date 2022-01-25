@@ -30,12 +30,11 @@ $('document').ready(function () {
         else {
             $('#NameError').removeClass('d-block');
             $('#NameError').addClass('d-none');
-            $('#barra').css({ 'width': '40%' });
         }
 
 
 
-        if ($('#inputEmail').val().slice(-1) == "@") {
+        if ($('#inputEmail').val().slice(-1) == "@" || $('#inputEmail').val().indexOf('@') == -1) {
             retVal = false;
             $('#EmailError').addClass('d-block');
             $('#EmailError').removeClass('d-none');
@@ -44,7 +43,6 @@ $('document').ready(function () {
         else {
             $('#EmailError').removeClass('d-block');
             $('#EmailError').addClass('d-none');
-            $('#barra').css({ 'width': '20%' });
         }
 
 
@@ -57,7 +55,6 @@ $('document').ready(function () {
         else {
             $('#RaceError').removeClass('d-block');
             $('#RaceError').addClass('d-none');
-            $('#barra').css({ 'width': '60%' });
         }
 
         return retVal;
@@ -87,5 +84,4 @@ $('document').ready(function () {
         sessionStorage.setItem("total", total);
         }
 }
-
 

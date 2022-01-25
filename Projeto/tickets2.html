@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
 </head>
-<body style="background-image: url(); background-repeat: no-repeat; background-size: cover; background-position: center">
+<body id="body" style="background-image: url(https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2021/07/01/1654205383-2019111181247mercedeslewishamilton71dma.jpg); background-repeat: no-repeat; background-size: cover; background-position: center ">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html" style="padding-right:30px;font-weight:bold">
@@ -24,18 +24,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html">Drivers</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html"><i class="fa fa-user"></i>Drivers</a></li>
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Constructors</a>
+                            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-graduation-cap"></i>Constructors</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><a class="dropdown-item" href='constructors.html'>All constructors</a></li>
                                 <li><a class="dropdown-item" href="constructors2021.html">2021 Teams</a></li>
                             </ul>
                         </div>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="circuits.html">Circuits</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html">Seasons</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html">Races</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="circuits.html"><i class="fa fa-road"></i>Circuits</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-calendar"></i>Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html"><i class="fa fa-flag-checkered"></i>Races</a></li>
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">More</a>
@@ -71,16 +71,19 @@
             </li>
         </ul>
         <br />
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-black" id="barra" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         <br />
         <div>
             <h2>You are ready to go! Just one more step.</h2>
         </div>
         <button type="button" id="PaymentButton" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Payment Details
+            Payment Details
         </button>
-        <button type="button" id="ConfirmPayment"  class="btn btn-outline-success d-none">
+        <button type="button" id="ConfirmPayment" class="btn btn-outline-success d-none">
             Confirm Payment
-      </button>
+        </button>
         <div class="modal fade" id="exampleModal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -108,7 +111,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-10">
                                     <h5>Amount</h5>
-                                    <h5 style="margin-bottom: 1rem;" id = "totalpreço"></h5>
+                                    <h5 style="margin-bottom: 1rem;" id="totalpreço"></h5>
                                 </div>
                             </div>
                         </div>
@@ -118,13 +121,14 @@
         </div>
         <div class="filler" style="width: 100%; height: 200px;">
         </div>
-        <div id="final" style ="height:200px;" class = "d-none">
-            <h3>Lights out and away we goo!</h3>
-            <br />
-            <img src="https://cdn.dribbble.com/users/6743410/screenshots/15376645/media/0012f969e92fd5114a3dedf33a655e65.gif" style=" width: 50%; height: 500px; float: right;" />
-            <br />
-            <a class ="btn btn-outline-primary"  href = "index.html" style="text-decoration:none;">Go Back to Homepage</a>
-            
+        <div id="final" class="card d-none" style="position: absolute; background-color: transparent; top: 40%; left: 25%; width: 50%; text-align: center;">
+            <div class="card-img">
+                <img src="https://cdn.dribbble.com/users/6743410/screenshots/15376645/media/0012f969e92fd5114a3dedf33a655e65.gif" style="width: 350px; height:300px;">
+            </div>
+            <div class="card-footer">
+                <h2><span style='color:white'>Lights out and away we go!</span></h2>
+                <a class="btn btn-outline-primary" href="index.html" style="text-decoration:none;">Go Back to Homepage</a>
+            </div>
         </div>
     </div>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
@@ -141,7 +145,8 @@
     </script>
     <script>
         $("#ConfirmPayment").click(function(){
-        $("#final").removeClass("d-none")
+            $("#final").removeClass("d-none");
+            $('#barra').css({ 'width': '100%' });
         })
     </script>
 </body>
