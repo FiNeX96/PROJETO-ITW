@@ -67,7 +67,7 @@ var vm = function () {
             });
         },
         // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO WTV)
-            select: function (event, ui) {
+            select: function () {
             console.log($("#SearchText").val())
             const search = $("#SearchText").val();
             const newRecords = [];
