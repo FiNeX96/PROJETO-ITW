@@ -66,7 +66,8 @@ var vm = function () {
                 }
             });
         },
-        select: function (event, ui) {
+        // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO WTV)
+            select: function (event, ui) {
             console.log($("#SearchText").val())
             const search = $("#SearchText").val();
             const newRecords = [];
@@ -79,6 +80,10 @@ var vm = function () {
             self.records(newRecords);
         }
     });
+    $("#button_search").click(function(){
+       self.activate(1)
+       $("#SearchText").val('')
+    })
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getDrivers...');
@@ -93,7 +98,7 @@ var vm = function () {
            self.pagesize(data.PageSize)
            self.totalPages(data.PageCount);
            self.totalRecords(data.Total);
-           self.SetFavourites(  )
+           self.SetFavourites()
            
        });
     };

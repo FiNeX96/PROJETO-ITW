@@ -63,7 +63,7 @@ $('document').ready(function () {
         return retVal;
     });
 
-    $('#submit1').click(function () {
+    $('#submit1').click(function () {    
         var posição = $('input[name="inlineRadioOptions"]:checked').length;
         var retVal = true;
         if (posição <= 0) {
