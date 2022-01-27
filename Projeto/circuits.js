@@ -134,38 +134,38 @@
     else {
         self.activate(pg);
     }
-
-    $("#mapid").css("height", window.innerHeight - 214);
-    $(window).resize(function () {
-        $("#mapid").css("height", window.innerHeight - 214);
-    });
-    var mymap = L.map('mapid').setView([36.75, -17], 6);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2JyaXN0IiwiYSI6ImNreXVuc2NnazFwNnAybnA2cGFhbjJ3M3AifQ.VIsA_yNxSGwPCduC9xWDpg', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-            'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1
-    }).addTo(mymap);
-    //--- Toooooodos os pontos
-    L.marker([39.458190000, -31.130100000], { opacity: 0.80 })
-        .bindTooltip('Flores (Aer&#xF3;dromo)').openTooltip()
-        .addTo(mymap);
-    //--- (…)
-    L.marker([39.466666670, -8.050000000], { opacity: 0.80 })
-        .bindTooltip('Alvega').openTooltip()
-        .addTo(mymap);
-    var popup = L.popup();
-    mymap.on('click', function (e) {
-        popup
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(mymap);
-    });
 };
 
 $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
+});
+
+fetch('https://unpkg.com/world-atlas/countries-50m.json').then((r) => r.json()).then((data) => {
+    const countries = ChartGeo.topojson.feature(data, data.objects.countries).features;
+
+    const chart = new Chart(document.getElementById("canvas").getContext("2d"), {
+        type: 'choropleth',
+        data: {
+            labels: countries.map((d) => d.properties.name),
+            datasets: [{
+                label: 'Countries',
+                data: countries.map((d) => ({ feature: d, value: Math.random() })),
+            }]
+        },
+        options: {
+            showOutline: true,
+            showGraticule: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+            },
+            scales: {
+                xy: {
+                    projection: 'equalEarth'
+                }
+            }
+        }
+    });
 });
