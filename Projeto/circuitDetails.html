@@ -54,48 +54,52 @@
     <div class="filler" style="width:100%;height:100px"></div>
     <div class="container">
         <h1 data-bind="text: Name"></h1>
-            <img data-bind="attr:{src: ImageUrl}" style="height:350px; width: 45%; border: 5px red solid;border-radius: 10px; float:left;" alt="Circuit Image">
-            <div style="width: 45%;" class="row">
-                <div id="circuitid" style='width: 100%;'>
-                    <small class="form-label" for="circuitid">CircuitId</small>
-                    <h3 style="display:inline-block;padding-right:20px;width:30%; border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: CircuitId"></h3>
-                </div>
-                <div id="country" style="width: 50%;">
-                    <small class="form-label" for="country">Country</small>
-                    <h3 style="display:inline-block;padding-right:5px;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Country"></h3>
-                </div>
-                <div id="location" style="width: 50%">
-                    <small class="form-label" for="location">Location</small>
-                    <h3 style="display:inline-block;padding-right:5px;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Location"></h3>
-                </div>
-                <div id="url" style="width: 100%">
-                    <small class="form-label" for="url">Url</small>
-                    <a style="padding-right:5px;display:inline-block;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;text-decoration:none" data-bind="attr: { href: Url() }">Wikipedia Link</a>
-                    
-                </div>
+        <img data-bind="attr:{src: ImageUrl}" style="height:350px; width: 45%; border: 5px red solid;border-radius: 10px; float:left;" alt="Circuit Image">
+        <div style="width: 45%;" class="row">
+            <div id="circuitid" style='width: 100%;'>
+                <small class="form-label" for="circuitid">CircuitId</small>
+                <h3 style="display:inline-block;padding-right:20px;width:30%; border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: CircuitId"></h3>
             </div>
-        <div data-bind="foreach: Races">
-            <span data-bind="text: RaceId"></span>
+            <div id="country" style="width: 50%;">
+                <small class="form-label" for="country">Country</small>
+                <h3 style="display:inline-block;padding-right:5px;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Country"></h3>
+            </div>
+            <div id="location" style="width: 50%">
+                <small class="form-label" for="location">Location</small>
+                <h3 style="display:inline-block;padding-right:5px;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Location"></h3>
+            </div>
+            <div id="url" style="width: 100%">
+                <small class="form-label" for="url">Url</small>
+                <a style="padding-right:5px;display:inline-block;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;text-decoration:none" data-bind="attr: { href: Url() }">Wikipedia Link</a>
+            </div>
         </div>
     </div>
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-dark text-light">
-                                <h5 class="modal-title" id="exampleModalLabel">
-                                    <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
+    <br />
+    <div style="width: 100%; height: 175px;"></div>
+    <div style="width:100%">
+        <h4>Races <i class="fa fa-flag-checkered"></i>  (years)</h4>
+    </div>
+    <div data-bind="foreach: Races" style="width: 100%">
+        <a data-bind="text: Year, attr: { href:'./raceDetails.html?id=' + RaceId }" title="selecione para ver detalhes" class="btn btn-outline-dark" style="margin: 5px;"></a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
 
-                                </h5>
-                            </div>
-                            <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
-                            </div>
-                        </div>
-                    </div>
+                    </h5>
                 </div>
-                <script src="../Scripts/bootstrap.bundle.min.js"></script>
-                <script src="../Scripts/knockout-3.5.1.js"></script>
-                <script src="../Scripts/jquery-3.6.0.min.js"></script>
-                <script src="circuitDetails.js"></script>
+                <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/knockout-3.5.1.js"></script>
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="circuitDetails.js"></script>
 </body>
 </html>
