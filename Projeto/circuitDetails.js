@@ -85,6 +85,27 @@
     else {
         self.activate(pg);
     }
+
+    self.toggleFavourite = function (id) {
+        if (self.favourites.indexOf(id) == -1) {
+            self.favourites.push(id);
+        } else {
+            self.favourites.remove(id);
+        }
+        localStorage.setItem("fav", JSON.stringify(self.favourites()));
+    }
+    self.SetFavourites = function () {
+        let storage;
+        try {
+            storage = JSON.parse(localStorage.getItem("fav"));
+        } catch (e) {
+            ;
+        }
+        if (Array.isArray(storage)) {
+            self.favourites(storage)
+        }
+    }
+    console.log(localStorage)
 };
 
 $(document).ready(function () {
