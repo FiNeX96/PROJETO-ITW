@@ -76,9 +76,10 @@
                     <i data-bind="attr : { 'class' : $parent.favourites().includes(CircuitId) ? 'fa fa-heart' : 'fa fa-heart-o'}" class="fa fa-heart-o" title="Selecione para adicionar aos favoritos"></i>
                 </button>
             </div>
-
-
-                </div>
+        <div data-bind="foreach: Races">
+            <span data-bind="text: RaceId"></span>
+        </div>
+    </div>
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
