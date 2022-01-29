@@ -58,19 +58,22 @@
             <div style="width: 45%;" class="row">
                 <div id="circuitid" style='width: 100%;'>
                     <small class="form-label" for="circuitid">CircuitId</small>
-                    <h3 style="width:30%; border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: CircuitId"></h3>
+                    <h3 style="display:inline-block;padding-right:20px;width:30%; border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: CircuitId"></h3>
                 </div>
+                
                 <div id="country" style="width: 50%;">
                     <small class="form-label" for="country">Country</small>
-                    <h3 style="border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Country"></h3>
+                    <h3 style="display:inline-block;padding-right:5px;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Country"></h3>
                 </div>
                 <div id="location" style="width: 50%">
                     <small class="form-label" for="location">Location</small>
-                    <h3 style="border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Location"></h3>
+                    <h3 style="display:inline-block;padding-right:5px;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Location"></h3>
                 </div>
+            
                 <div id="url" style="width: 100%">
                     <small class="form-label" for="url">Url</small>
-                    <p style="border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;" data-bind="text: Url"></p>
+                    <a style="padding-right:5px;display:inline-block;border-bottom-right-radius: 6px; border: 3px groove; border-left: none; border-top: none; text-align: left; margin: 30px; margin-top: 0px;text-decoration:none" data-bind="attr: { href: Url() }">Wikipedia Link</a>
+                    
                 </div>
                 <button class="btn btn-default btn-sm btn-outline-danger btn-favourite" style="width: 35px; margin: 30px;" data-bind="click: () => $parent.toggleFavourite(CirctuitId), attr : { 'id': 'favourite_' + CircuitId }">
                     <i data-bind="attr : { 'class' : $parent.favourites().includes(CircuitId) ? 'fa fa-heart' : 'fa fa-heart-o'}" class="fa fa-heart-o" title="Selecione para adicionar aos favoritos"></i>
