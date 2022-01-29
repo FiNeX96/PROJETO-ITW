@@ -120,18 +120,6 @@ var vm = function () {
         });
     };
 
-    setFavorites = function () {
-        botao = $(event.target).hasClass("btn-danger");
-        if (botao == true) {
-            event.target.classList.remove("btn-danger");
-        }
-        else {
-            event.target.classList.add("btn-danger");
-        }
-
-        // a ideia aki é tentar ter um mapa ( dicionário, em que a key é o driverID e o value é a entrada da lista correspondente )
-
-    }
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
@@ -194,6 +182,28 @@ var vm = function () {
     else {
         self.activate(pg);
     }
+
+
+    self.toggleFavourite = function (id) {
+        if (self.favourites.indexOf(id) == -1) {
+            self.favourites.push(id);
+        } else {
+            self.favourites.remove(id);
+        }
+        localStorage.setItem("fav", JSON.stringify(self.favourites()));
+    }
+    self.SetFavourites = function () {
+        let storage;
+        try {
+            storage = JSON.parse(localStorage.getItem("fav"));
+        } catch (e) {
+            ;
+        }
+        if (Array.isArray(storage)) {
+            self.favourites(storage)
+        }
+    }
+    console.log(localStorage)
 };
 
 $(document).ready(function () {
