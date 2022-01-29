@@ -1,5 +1,4 @@
 var favoritos = JSON.parse(localStorage.getItem("fav"));
-console.log(Array.isArray(favoritos));
 var vm = function () {
     console.log("ViewModel initiated...");
     //---Variáveis locais
@@ -18,6 +17,7 @@ var vm = function () {
             var composedUri = self.baseUri() + favoritos[driverID];
             ajaxHelper(composedUri, "GET").done(function (data) {
                 self.records.push(data);
+                hideLoading();
             });
         }
     };
@@ -36,6 +36,18 @@ var vm = function () {
         });
     }
     self.activate(1);
+    function showLoading() {
+        $("#myModal").modal("show", {
+            backdrop: "static",
+            keyboard: false,
+        });
+    }
+    // desaparecer o modal//
+    function hideLoading() {
+        $("#myModal").on("shown.bs.modal", function (e) {
+            $("#myModal").modal("hide");
+        });
+    }
 };
 
 $(document).ready(function () {
