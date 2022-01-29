@@ -66,10 +66,11 @@ var vm = function () {
                 }
             });
         },
+
+        
         // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO)
             select: function (event, ui) {
-            console.log($("#SearchText").val())
-            const search = $("#SearchText").val();
+            const search = ui.item.value;
             const newRecords = [];
 
             for (const d of autocompleteRecords) {
@@ -80,10 +81,7 @@ var vm = function () {
             self.records(newRecords);
         }
     });
-    $("#button_search").click(function(){
-       self.activate(1)
-       $("#SearchText").val('')
-    })
+   
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getDrivers...');
@@ -185,6 +183,14 @@ var vm = function () {
           }
       }
       console.log(localStorage)
+
+
+
+      
+      $("#button_delete").click(function(pg){
+        window.location.replace("drivers.html");
+        $("#SearchText").val('')
+     })
 };
 
 $(document).ready(function () {
@@ -192,28 +198,5 @@ $(document).ready(function () {
     ko.applyBindings(new vm());
 });
 
-
-
-
-/*function myFunction() {
-    // Declare variables
-    self.Name = ko.observable('');
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("SearchText");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-}*/
 
 
