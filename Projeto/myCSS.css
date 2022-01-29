@@ -1,6 +1,7 @@
 ﻿body {
     font-family: 'Titillium Web', sans-serif;
     margin: 70px 0 70px 0;
+    background-color:grey !important;
 }
 .btn-default {
     color: #333;

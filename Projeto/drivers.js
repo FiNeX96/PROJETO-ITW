@@ -98,7 +98,7 @@ var vm = function () {
            self.pagesize(data.PageSize)
            self.totalPages(data.PageCount);
            self.totalRecords(data.Total);
-           self.SetFavourites()
+           self.SetFavourites();
            
        });
     };

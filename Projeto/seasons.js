@@ -40,7 +40,6 @@
            self.hasNext(data.HasNext);
            self.hasPrevious(data.HasPrevious); 
            self.baseUri2('http://192.168.160.58/Formula1/api/Statistics/Season?year=' + data.List[0].Year)
-           self.baseUri3('http://192.168.160.58/Formula1/api/Seasons/Season?year=' + data.List[0].Year)
         ajaxHelper(self.baseUri2(), 'GET').done(function (data) {
                console.log(data)
                self.records(data.DriverStandings)
@@ -54,18 +53,8 @@
            });
        });
     };
-    setFavorites = function () {
-        botao = $(event.target).hasClass("btn-danger");
-        if (botao == true) {
-          event.target.classList.remove("btn-danger");
-        }
-        else {
-            event.target.classList.add("btn-danger");
-        }
 
-        // a ideia aki é tentar ter um mapa ( dicionário, em que a key é o driverID e o value é a entrada da lista correspondente )
-
-    }
+    
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
@@ -160,3 +149,10 @@ $("#Hide").click(function(){
     $("#Hide").addClass("d-none")
 })
 })
+document.getElementById("SearchText")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("button_search").click();
+    }
+});
