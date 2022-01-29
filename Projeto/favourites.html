@@ -61,7 +61,6 @@
             <h2>Favourites</h2>
         </div>
         <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 3px groove red;text-align: left; margin: 30px; margin-top: 0px;" >Drivers</h3>
-        <main>
         <div class="row" data-bind="foreach: records">
         <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;"  >
                         <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
@@ -80,9 +79,25 @@
                 </div>
             </div>
             <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 3px groove red;text-align: left; margin: 30px; margin-top: 0px;" >Constructors</h3>
+                <div class="row" data-bind="foreach: recordsv2">
+                    <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;"  >
+                                    <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
+                                        <!-- ko if: ImageUrl-->
+                                        <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                                        <!-- /ko -->
+                                        <!-- ko ifnot: ImageUrl-->
+                                        <img class="img fluid" src ="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                                        <!-- /ko -->
+                                        <div class="card-body">
+                                            <h4 class="card-title" data-bind="text: Name"></h4>
+                                            <p class="card-text" data-bind="text: ConstructorId"></p>
+                                            <a class="btn btn-dark btn-sm" data-bind="attr: { href: './constructorDetails.html?id=' + ConstructorId }">Details</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
           </div>
 
-        </main>
        
         
 

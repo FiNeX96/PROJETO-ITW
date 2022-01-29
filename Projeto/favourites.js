@@ -1,4 +1,5 @@
 var favoritos = JSON.parse(localStorage.getItem("fav"));
+var favoritos2 = JSON.parse(localStorage.getItem("fav2"));
 var vm = function () {
     console.log("ViewModel initiated...");
     //---Variáveis locais
@@ -6,9 +7,13 @@ var vm = function () {
     self.baseUri = ko.observable(
         "http://192.168.160.58/Formula1/api/Drivers/Driver?id="
     );
+    self.baseUri2 = ko.observable("http://192.168.160.58/Formula1/api/Constructors/Constructor?id=")
     self.records = ko.observableArray([]);
+    self.recordsv2 = ko.observableArray([])
+    self.favourites2 = ko.observableArray();
     self.favourites = ko.observableArray();
     self.favourites(favoritos);
+    self.favourites(favoritos2)
 
     //--- Page Events
     self.activate = function (id) {
@@ -17,9 +22,15 @@ var vm = function () {
             var composedUri = self.baseUri() + favoritos[driverID];
             ajaxHelper(composedUri, "GET").done(function (data) {
                 self.records.push(data);
-                hideLoading();
             });
         }
+        for (let ConstructorId = 0 ; ConstructorId < favoritos2.length; ConstructorId++){
+          var composedUri2 = self.baseUri2() + favoritos2[ConstructorId]
+          ajaxHelper(composedUri2, "GET").done(function (data) {
+            self.recordsv2.push(data);
+            hideLoading();
+        })
+    }
     };
     //--- Internal functions
     function ajaxHelper(uri, method, data) {

@@ -8,18 +8,6 @@
     background-color: #f8f9fa;
     border-color: #ccc;
 }
-    .btn-default:focus {
-        color: #333;
-        background-color: palegreen;
-        border-color: #8c8c8c;
-    }
-
-    .btn-default:active,
-    .btn-default:hover {
-        color: palegreen;
-        background-color: #f8f9fa;
-        border-color: #adadad;
-    }
 .nav-link, .dropdown-toggle {
     color: white !important;
 }/* AKI MUDAS A COR DA LETRA NA NAVBAR */
