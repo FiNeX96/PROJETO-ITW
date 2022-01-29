@@ -186,7 +186,7 @@ var vm = function () {
 
 
 
-
+      
       $("#button_delete").click(function(pg){
         window.location.replace("drivers.html");
         $("#SearchText").val('')
