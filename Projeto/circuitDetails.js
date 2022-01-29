@@ -11,6 +11,7 @@
     self.CircuitRef = ko.observable('');
     self.ImageUrl = ko.observable('');
     self.Name = ko.observable('');
+    
     self.Location= ko.observable('');
     self.Country = ko.observable('');
     self.Races = ko.observableArray('');
@@ -29,6 +30,7 @@
             self.Location(data.Location);
             self.Races(data.Races);
             self.Url(data.Url);
+            
             hideLoading();
 
         });
@@ -85,27 +87,6 @@
     else {
         self.activate(pg);
     }
-
-    self.toggleFavourite = function (id) {
-        if (self.favourites.indexOf(id) == -1) {
-            self.favourites.push(id);
-        } else {
-            self.favourites.remove(id);
-        }
-        localStorage.setItem("fav", JSON.stringify(self.favourites()));
-    }
-    self.SetFavourites = function () {
-        let storage;
-        try {
-            storage = JSON.parse(localStorage.getItem("fav"));
-        } catch (e) {
-            ;
-        }
-        if (Array.isArray(storage)) {
-            self.favourites(storage)
-        }
-    }
-    console.log(localStorage)
 };
 
 $(document).ready(function () {
