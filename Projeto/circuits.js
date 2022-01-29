@@ -9,6 +9,7 @@
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
+    self.ImageUrl = ko.observable('');
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(10);
     self.totalRecords = ko.observable(50);
