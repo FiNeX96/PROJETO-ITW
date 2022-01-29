@@ -1,6 +1,4 @@
-﻿ 
-   
-
+﻿
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
