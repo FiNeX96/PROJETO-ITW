@@ -183,8 +183,12 @@ var vm = function () {
           }
       }
       console.log(localStorage)
+
+
+
+
       $("#button_delete").click(function(pg){
-        self.activate(1);
+        window.location.replace("drivers.html");
         $("#SearchText").val('')
      })
 };
