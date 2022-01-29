@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>F1 Tracker - Circuits</title>
+    <title>F1 Tracker - Circuit Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
@@ -53,8 +53,25 @@
     <div class="filler" style="width:100%;height:50px"></div>
 
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
+
+                    </h5>
+                </div>
+                <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="circuitDetails.js"></script>
 </body>
 </html>
