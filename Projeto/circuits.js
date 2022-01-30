@@ -12,6 +12,7 @@
     self.ImageUrl = ko.observable('');
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(12);
+    self.favourites3 = ko.observableArray ([]);
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
@@ -94,6 +95,7 @@
             self.pagesize(data.PageSize)
             self.totalPages(data.PageCount);
             self.totalRecords(data.Total);
+            self.SetFavourites();
         });
     };
     //--- Internal functions
@@ -158,6 +160,28 @@
     else {
         self.activate(pg);
     }
+
+
+    self.toggleFavourite = function(id) {
+        if (self.favourites3.indexOf(id)== -1 ){
+            self.favourites3.push(id);
+        }else{
+            self.favourites3.remove(id);
+        }
+        localStorage.setItem("fav3", JSON.stringify(self.favourites3()));
+        }
+        self.SetFavourites = function() {
+            let storage;
+            try {
+                storage = JSON.parse(localStorage.getItem("fav3"));
+            } catch (e) {
+                ;
+            }
+            if (Array.isArray(storage)) {
+                self.favourites3(storage)
+            }
+        }
+        console.log(localStorage)
 };
 
 $(document).ready(function () {

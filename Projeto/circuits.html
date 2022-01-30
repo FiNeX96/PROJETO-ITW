@@ -79,6 +79,9 @@
                     <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 250px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Circuit Image">
                     <div class="card-body" style="width: 100%; border: 2px solid; border-top: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
                         <h5 class="card-title"><span data-bind="text: Name"></span></h5>
+                        <button class="btn btn-default btn-sm btn-outline-danger btn-favourite" data-bind="click: () => $parent.toggleFavourite(CircuitId), attr : { 'id': 'favourite_' + CircuitId }">
+                            <i data-bind="attr : { 'class' : $parent.favourites3().includes(CircuitId) ? 'fa fa-heart' : 'fa fa-heart-o'}" class="fa fa-heart-o" title="Selecione para adicionar aos favoritos"></i>
+                        </button>
                         <p class="card-title">CircuitId: <span data-bind="text: CircuitId"></span></p>
                         <p class="card-title">Location: <span data-bind="text: Country"></span></p>
                     </div>
