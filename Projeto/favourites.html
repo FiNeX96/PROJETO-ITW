@@ -58,40 +58,43 @@
     <!-- Working Area -->
     <div class="container">
         <div class="border-bottom border-danger pt-4 pb-2 mb-3">
-            <h2>Favourites</h2>
+            <h2>Favourites<h6>Check out your favorite drivers and constructors!</h6></h2>
+            
         </div>
-        <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 3px groove red;text-align: left; margin: 30px; margin-top: 0px;" >Drivers</h3>
+        <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 10px groove red;text-align: left; margin: 30px; margin-top: 0px;font-size:32px;" >Drivers</h3>
         <div class="row" data-bind="foreach: records">
         <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;"  >
                         <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
                             <!-- ko if: ImageUrl-->
-                            <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                            <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="max-height: 168px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
                             <!-- /ko -->
                             <!-- ko ifnot: ImageUrl-->
                             <img class="img fluid" src ="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
                             <!-- /ko -->
                             <div class="card-body">
                                 <h4 class="card-title" data-bind="text: Name"></h4>
-                                <p class="card-text" data-bind="text: DriverId"></p>
+                                <p class="card-text" >ID:  <span class ="card-text" data-bind="text: DriverId"></span></p>
+                                <p class="card-text" >Nationality:  <span class ="card-text" data-bind="text: Nationality"></span></p>
                                 <a class="btn btn-dark btn-sm" data-bind="attr: { href: './driverDetailsv2.html?id=' + DriverId }">Details</a>
                             </div>
                         </div>
                 </div>
             </div>
-            <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 3px groove red;text-align: left; margin: 30px; margin-top: 0px;" >Constructors</h3>
+            <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 10px groove red;text-align: left; margin: 30px; margin-top: 0px;font-size:32px;" >Constructors</h3>
                 <div class="row" data-bind="foreach: recordsv2">
                     <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;"  >
                                     <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
                                         <!-- ko if: ImageUrl-->
-                                        <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                                        <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="height: 150px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
                                         <!-- /ko -->
                                         <!-- ko ifnot: ImageUrl-->
                                         <img class="img fluid" src ="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
                                         <!-- /ko -->
                                         <div class="card-body">
                                             <h4 class="card-title" data-bind="text: Name"></h4>
-                                            <p class="card-text" data-bind="text: ConstructorId"></p>
-                                            <a class="btn btn-dark btn-sm" data-bind="attr: { href: './constructorDetails.html?id=' + ConstructorId }">Details</a>
+                                            <p class="card-text" >ID:  <span class ="card-text" data-bind="text: ConstructorId"></span></p>
+                                            <p class="card-text" >Nationality: <span class ="card-text" data-bind="text: Nationality"></span></p>
+                                            <a class="btn btn-dark btn-sm" style="float:right" data-bind="attr: { href: './constructorDetails.html?id=' + ConstructorId }">Details</a>
                                         </div>
                                     </div>
                             </div>
