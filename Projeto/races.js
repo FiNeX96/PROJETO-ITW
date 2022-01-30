@@ -58,19 +58,6 @@
             self.totalRecords(data.Total);
         });
     };
-
-    setFavorites = function () {
-        botao = $(event.target).hasClass("btn-danger");
-        if (botao == true) {
-            event.target.classList.remove("btn-danger");
-        }
-        else {
-            event.target.classList.add("btn-danger");
-        }
-
-        // a ideia aki é tentar ter um mapa ( dicionário, em que a key é o driverID e o value é a entrada da lista correspondente )
-
-    }
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message

@@ -90,11 +90,12 @@
     else {
         self.activate(pg);
     }
-    var map;
+
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: self.latitude(), lng: self.longitude(), },
-        zoom: 12
+        zoom: 14,
+        mapTypeId: 'satellite',
         })
     }
 };

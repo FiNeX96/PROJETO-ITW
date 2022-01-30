@@ -43,17 +43,6 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
-
-
-
-
-
-
-
-
-
-
-
     $("#SearchText").autocomplete({
         minLength: 2,
         source: function (request, response) {
@@ -74,9 +63,6 @@ var vm = function () {
                 }
             });
         },
-
-        
-        // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO)
             select: function (event, ui) {
             const search = ui.item.value;
             const newRecords = [];
@@ -168,7 +154,6 @@ var vm = function () {
     //--- start ....
     showLoading();
     var pg = getUrlParameter('page');
-    console.log(pg);
     if (pg == undefined)
         self.activate(1);
     else {

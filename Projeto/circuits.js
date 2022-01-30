@@ -43,6 +43,43 @@
             list.push(i + step);
         return list;
     };
+
+    $("#SearchText").autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: 'http://192.168.160.58/Formula1/api/Search/Circuits?q=' + $('#SearchText').val(),
+                data: '',
+                dataType: "json",
+                success: function (data) {
+                    autocompleteRecords = data;
+                    response($.map(data, function (item) {
+                        return item.Name;
+                    }));
+                },
+                error: function (result) {
+                    alert(result.statusText);
+                }
+            });
+        },
+            select: function (event, ui) {
+            const search = ui.item.value;
+            const newRecords = [];
+
+            for (const d of autocompleteRecords) {
+                if (d.Name.includes(search)) {
+                    newRecords.push(d);
+                }
+            }
+            self.records(newRecords);
+        }
+    });
+    $("#button_delete").click(function(){
+        window.location.replace("circuits.html");
+        $("#SearchText").val('')
+    })
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getCircuits...');
@@ -60,19 +97,6 @@
             self.totalRecords(data.Total);
         });
     };
-
-    setFavorites = function () {
-        botao = $(event.target).hasClass("btn-danger");
-        if (botao == true) {
-            event.target.classList.remove("btn-danger");
-        }
-        else {
-            event.target.classList.add("btn-danger");
-        }
-
-        // a ideia aki é tentar ter um mapa ( dicionário, em que a key é o driverID e o value é a entrada da lista correspondente )
-
-    }
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message

@@ -10,6 +10,7 @@
     <link href="myCSS.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Content/themes/base/jquery-ui.css" rel="stylesheet" />
     <meta charset="utf-8" />
 </head>
 <body>
@@ -41,13 +42,12 @@
             <h2>Circuits List</h2>
         </div>
         <!-- ko if:records().length > 0 -->
-        <div class="row small">
-            <p class=" col-4 mr-auto pt-2">
+            <p class=" col-3 mr-auto pt-2">
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
                 <span data-bind="html: 'Circuits: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
-            <button class="btn-fav btn-outline-success" style="width: 200px;height:30px;">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
-            <div class="col-8 my-0 pt-3">
+            <div class="row-cols-3">
+                <div class="row">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
                     <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './circuits.html?page=' + '1',  rel:'prev'}">⇤</a></li>
@@ -68,8 +68,11 @@
                 </ul>
             </div>
         </div>
-
         <!-- /ko -->
+        <div class="form-group input-group rounded" style="position:absolute;right:100px;top:175px;margin-bottom:35px;;width: 30%; float: right; padding: 5px;">
+            <input class="form-control me-2" placeholder="Search By Name" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 3px;" />
+            <button class="btn btn-outline-dark" id="button_delete" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-times-circle"></i></button>
+        </div>
         <div class="col-md-3 col-lg-3 col-sm-12" data-bind="foreach: records" style="width:100%;">
             <div class="zoom" style="width:30%; float:left; margin:20px;">
                 <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 250px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Circuit Image">
@@ -113,6 +116,7 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.13.0.js"></script>
     <script src="circuits.js"></script>
 </body>
 </html>
