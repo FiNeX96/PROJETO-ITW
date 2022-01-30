@@ -43,34 +43,27 @@
             <h6 class ="text-dark"> Check out all the information about all the Formula 1 Seasons since 1950!</h6>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-6">
-                <div class="card center text-center" style="border: 5px grey groove">
+            <div class="col-sm-4 col-md-6 col-lg-6">
+                <nav aria-label="Page navigation example" style="width: 100px; float: left;">
+                    <div class="filler" style="width:0.01px; height: 300px;"></div>
+                    <ul class="pagination justify-content-center">
+                        <!-- ko if: currentPage() >= 5 -->
+                        <li class="page-item float-end"><a class="page-link" style="color: black;" title="First Page" data-bind="attr: { href: './seasons.html?page=' + '1',  rel:'prev'}"><<</a></li>
+                        <!-- /ko -->
+                        <!-- ko if: currentPage() >= 2-->
+                        <li class="page-item float-end"><a class="page-link" style="color: black" title="Previous Page" data-bind="attr: { href: './seasons.html?page=' + previousPage(),  rel:'prev'}"><</a></li>
+                        <!-- /ko -->
+                    </ul>
+                </nav>
+                <div class="card center text-center" style="border: 3px grey solid; border-radius: 5px; width: 400px; float: left;">
                     <div class="card-body">
                         <div class="card-title">
-                            <h1 class="card-header bg-success text-light" data-bind="text: displayYear" ></h1>
+                            <h1 class="card-header bg-success text-light" data-bind="text: displayYear"></h1>
                         </div>
-                        <div class="form-group input-group rounded" style="width: 30%; float: left; padding: 5px;">
+                        <div class="form-group input-group rounded" style="padding: 5px;">
                             <input class="form-control me-2" placeholder="Search Year" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 1px;" />
                             <button class="btn btn-outline-dark" id="button_search" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-search"></i></button>
                         </div>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <!-- ko if: currentPage() >= 5 -->
-                                <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './seasons.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                                <!-- /ko -->
-                                <!-- ko if: currentPage() >= 2-->
-                                <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './seasons.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
-                                <!-- /ko -->
-                                <!-- ko if: currentPage() != 72 -->
-                                <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './seasons.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                                <!-- /ko -->
-                                <!-- ko if: currentPage() <= 71  -->
-                                <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './seasons.html?page=' + totalPages() }">⇥</a></li>
-                                <!-- /ko -->
-
-                            </ul>
-                        </nav>
-
                     </div>
                     <div class="card-text card-sm-12" style="text-align:left;margin-left:15px">
                         <div class="row">
@@ -132,9 +125,20 @@
                         </div>
                     </div>
                 </div>
+                <nav aria-label="Page navigation example" style="width:100px; float: left;">
+                    <div class="filler" style="width:0.01px; height: 300px;"></div>
+                    <ul class="pagination justify-content-center">
+                        <!-- ko if: currentPage() != 72 -->
+                        <li class="page-item"><a class="page-link" style="color: black" title="Next Page" data-bind="attr: { href: './seasons.html?page=' + nextPage(), rel:'next' }">></a></li>
+                        <!-- /ko -->
+                        <!-- ko if: currentPage() <= 71  -->
+                        <li class="page-item"><a class="page-link" style="color: black" title="Last Page" data-bind="attr: { href: './seasons.html?page=' + totalPages() }">>></a></li>
+                        <!-- /ko -->
+                    </ul>
+                </nav>
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6">
-                <table class="table d-none" id="tableDStand" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
+                <table class="table d-none" id="tableDStand" style="width:460px;position:absolute;border:3px solid;height:600px;overflow-y:scroll; border-radius: 4px;">
                     <thead>
                         <tr>
                             <th scope="col" style="padding-right:50px;text-align:center">Position</th>
@@ -151,7 +155,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table d-none" id="tableCStand" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y: scroll;">
+                <table class="table d-none" id="tableCStand" style="width:460px;position:absolute;border:3px solid;height:600px;overflow-y: scroll;border-radius: 4px;">
                     <thead>
                         <tr>
                             <th scope="col" style="padding-right:50px;text-align:center">Points</th>
@@ -168,7 +172,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table d-none" id="tableRaces" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
+                <table class="table d-none" id="tableRaces" style="width:500px;position:absolute;border:3px solid;height:600px;overflow-y:scroll; border-radius: 4px;">
                     <thead>
                         <tr>
                             <th scope="col" style="padding-right:50px;text-align:center">Race ID</th>
