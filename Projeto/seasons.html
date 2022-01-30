@@ -136,46 +136,57 @@
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 col-md-6">
-                <table class="table d-none" id="tableDStand" style="width:350px;position:absolute;border:3px solid;height:600px;overflow-y:scroll; border-radius: 4px;">
-                    <thead>
+                <table class="table table-striped d-none" id="tableDStand" style="width:500px;position:absolute;border:3px solid;height:600px;overflow-y:scroll; border-radius: 4px;">
+                    <thead class="bg-dark text-light">
                         <tr>
                             <th scope="col" style="padding-right:50px;text-align:center">Position</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">Points</th>
                             <th scope="col" style="padding-right:50px;text-align:center">ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">Name</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: records">
                         <tr>
                             <th scope="row" data-bind="text: Position"></th>
+                            <td data-bind="text: Points"></td>
                             <td data-bind="text: DriverId"></td>
-                            <td data-bind="text: Name"></td>
+                            <th scope="row" data-bind="text: Name"></th>
+                            <td class="text-end">
+                                <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./driverDetailsv2.html?id=' + DriverId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                            </td>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table d-none" id="tableCStand" style="width:350px;position:absolute;border:3px solid;height:500px;overflow-y: scroll;border-radius: 4px;">
-                    <thead>
+                <table class="table table-stripped d-none" id="tableCStand" style="width:400px;position:absolute;border:3px solid;height:500px;overflow-y: scroll;border-radius: 4px;">
+                    <thead class="bg-dark text-light">
                         <tr>
                             <th scope="col" style="padding-right:50px;text-align:center">Points</th>
                             <th scope="col" style="padding-right:50px;text-align:center">Id</th>
-                            <th scope="col">Constructor Name</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">Constructor Name</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: records2">
                         <tr>
                             <th scope="row" data-bind="text: Points"></th>
                             <td data-bind="text: ConstructorId"></td>
-                            <td data-bind="text: Name"></td>
+                            <th scope="row" data-bind="text: Name"></th>
+                            <td class="text-end">
+                                <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./constructorDetails.html?id=' + ConstructorId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                            </td>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <table class="table d-none" id="tableRaces" style="width:500px;position:absolute;border:3px solid;height:600px;overflow-y:scroll; border-radius: 4px;">
-                    <thead>
+                <table class="table table-striped d-none" id="tableRaces" style="width:500px;position:absolute;border:3px solid;height:600px;overflow-y:scroll; border-radius: 4px;">
+                    <thead class="bg-dark text-light">
                         <tr>
                             <th scope="col" style="padding-right:50px;text-align:center">Race ID</th>
                             <th scope="col" style="padding-right:50px;text-align:center">Circuit Name</th>
-                            <th scope="col">Round</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">Round</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: records3">
@@ -183,6 +194,9 @@
                             <th scope="row" data-bind="text: RaceId"></th>
                             <td data-bind="text: CircuitName"></td>
                             <td data-bind="text: Round"></td>
+                            <td class="text-end">
+                                <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./raceDetails.html?id=' + RaceId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
+                            </td>
                             </td>
                         </tr>
                     </tbody>
