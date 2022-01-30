@@ -38,7 +38,6 @@ $('document').ready(function () {
             retVal = false;
             $('#EmailError').addClass('d-block');
             $('#EmailError').removeClass('d-none');
-            console.log($('#inputEmail').val().indexOf('@'))
         }
         else {
             $('#EmailError').removeClass('d-block');

@@ -37,8 +37,7 @@
 }
 
 .zoom:hover {
-        transform: scale(1.08); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */   
-        background-color: black;
-        color: whitesmoke;
+        transform: scale(1.08);    
+        color: black;
 }
 

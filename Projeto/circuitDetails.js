@@ -12,8 +12,8 @@ var vm = function () {
     self.CircuitRef = ko.observable('');
     self.ImageUrl = ko.observable('');
     self.Name = ko.observable('');
-    self.latitude = ko.observable();
-    self.longitude= ko.observable()
+    self.latitude = ko.observable("");
+    self.longitude= ko.observable("")
     self.Location= ko.observable('');
     self.Country = ko.observable('');
     self.Races = ko.observableArray('');
@@ -93,12 +93,12 @@ var vm = function () {
     }
     function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: self.latitude(), lng: self.longitude(), },
-        zoom: 14,
-        mapTypeId: 'satellite',
+            center: { lat: self.latitude(), lng: self.longitude() },
+            zoom: 14,
+            mapTypeId: 'satellite',
         });
     };
-};
+}
 
 $(document).ready(function () {
     console.log("ready!");
