@@ -30,7 +30,6 @@ var vm = function () {
             self.DriverId(data.DriverId);
             self.DriverRef(data.DriverRef);
             self.ImageUrl(data.ImageUrl);
-            
             self.Name(data.Name);
             self.Nationality(data.Nationality);
             self.Number(data.Number);
