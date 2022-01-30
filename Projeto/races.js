@@ -41,6 +41,48 @@
             list.push(i + step);
         return list;
     };
+
+    $("#SearchText").autocomplete({
+        minLength: 3,
+        source: function (request, response) {
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: 'http://192.168.160.58/Formula1/api/Search/Races?q=' + $('#SearchText').val(),
+                data: '',
+                dataType: "json",
+                success: function (data) {
+                    autocompleteRecords = data;
+                    response($.map(data, function (item) {
+                        return item.Name;
+                    }));
+                },
+                error: function (result) {
+                    alert(result.statusText);
+                }
+            });
+        },
+
+        
+        
+            select: function (event, ui) {
+            const search = ui.item.value;
+            const newRecords = [];
+
+            for (const d of autocompleteRecords) {
+                if (d.Name.includes(search)) {
+                    newRecords.push(d);
+                }
+            }
+            self.records(newRecords);
+        }
+    });
+
+
+
+
+
+
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getCircuits...');
@@ -120,6 +162,12 @@
     else {
         self.activate(pg);
     }
+
+
+    $("#button_delete").click(function(pg){
+        window.location.replace("drivers.html");
+        $("#SearchText").val('')
+     })
 };
 
 $(document).ready(function () {
