@@ -34,12 +34,12 @@
             self.Date(data.Date);
             self.Time(data.Time);
             self.Url(data.Url);
-            self.ImageUrl(data.ImageUrl);
             self.Results(data.Results);
             hideLoading();
         });
         ajaxHelper(composedUri2, 'GET').done(function (data) {
             self.Wins(data.Wins)
+            self.ImageUrl(data.ImageUrl);
             position = data.Career[0].Position
             function suffix(value) {
                 if (value == 1 || value == 21 || value == 31 || value == 41 || value == 51)
