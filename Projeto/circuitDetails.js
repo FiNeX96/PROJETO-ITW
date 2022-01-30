@@ -1,4 +1,5 @@
-﻿var vm = function () {
+﻿let map;
+var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
@@ -90,17 +91,17 @@
     else {
         self.activate(pg);
     }
-
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: self.latitude(), lng: self.longitude(), },
         zoom: 14,
         mapTypeId: 'satellite',
-        })
-    }
+        });
+    };
 };
 
 $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
+

@@ -14,16 +14,24 @@
 </head>
 
 <body>
-    <div data-bind="foreach: grouped" >
-        <div data-bind="foreach: $data" class="row">
-            <div class="column" data-bind="text: text"></div>
-        </div>
-    </div>    
+    <div id = "map">
+         
     
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/jquery-ui-1.13.0.js"></script>
-    <script src="teste.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCySu0b4e2ucTo6C6AZYEi-N9sB0sED340&callback=initMap">
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 1.03445, lng: -2.304, },
+        zoom: 14,
+        mapTypeId: 'satellite',
+        })
+    }
+
+</script>
+
 </body>
 </html>

@@ -118,7 +118,7 @@
     var pg = getUrlParameter('page');
     console.log(pg);
     if (pg == undefined)
-        self.activate(1);
+        self.activate(72);
     else {
         self.activate(pg);
     }
