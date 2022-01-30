@@ -24,32 +24,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="drivers.html"><i class="fa fa-user"></i>Drivers</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favourites.html">Favourites</a></li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-graduation-cap"></i>Constructors</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href='constructors.html'>All constructors</a></li>
-                                <li><a class="dropdown-item" href="constructors2021.html">2021 Teams</a></li>
-                            </ul>
-                        </div>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favourites.html"><i class="fa fa-heart"></i>Favourites</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="constructors.html"><i class="fa fa-graduation-cap"></i>Constructors</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="circuits.html"><i class="fa fa-road"></i>Circuits</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-calendar"></i>Seasons</a></li>
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="races.html"><i class="fa fa-flag-checkered"></i>Races</a></li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href='history.html'>History</a></li>
-                                <li><a class="dropdown-item" href="legends.html">Legends</a></li>
-                                <li><a class="dropdown-item" href="rules.html">Rules</a></li>
-                                <li><a class="dropdown-item" href="tickets.html">Buy Tickets</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    
+                    <li class="nav-item me-auto"><a class="nav-link" aria-current="page" href="tickets.html"><i class="fa fa-shopping-cart"></i>  Tickets</a></li>
                 </ul>
             </div>
         </div>
@@ -59,51 +41,62 @@
     <div class="container">
         <div class="border-bottom border-danger pt-4 pb-2 mb-3">
             <h2>Favourites<h6>Check out your favorite drivers and constructors!</h6></h2>
-            
+
         </div>
-        <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 10px groove red;text-align: left; margin: 30px; margin-top: 0px;font-size:32px;" >Drivers</h3>
-        <div class="row" data-bind="foreach: records">
-        <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;"  >
+        <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 10px groove red;text-align: left; margin: 30px; margin-top: 0px;font-size:32px;">
+            Drivers</h3>
+            <div class="row" data-bind="foreach: records">
+                <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;">
+                    <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
+                        <!-- ko if: ImageUrl-->
+                        <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="max-height: 168px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                        <!-- /ko -->
+                        <!-- ko ifnot: ImageUrl-->
+                        <img class="img fluid" src="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                        <!-- /ko -->
+                        <div class="card-body">
+                            <h4 class="card-title" data-bind="text: Name"></h4>
+                            <p class="card-text">ID:  <span class="card-text" data-bind="text: DriverId"></span></p>
+                            <p class="card-text">Nationality:  <span class="card-text" data-bind="text: Nationality"></span></p>
+                            <a class="btn btn-dark btn-sm" data-bind="attr: { href: './driverDetailsv2.html?id=' + DriverId }">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 10px groove red;text-align: left; margin: 30px; margin-top: 0px;font-size:32px;">
+                Constructors</h3>
+                <div class="row" data-bind="foreach: recordsv2">
+                    <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;">
                         <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
                             <!-- ko if: ImageUrl-->
-                            <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="max-height: 168px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                            <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="height: 150px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
                             <!-- /ko -->
                             <!-- ko ifnot: ImageUrl-->
-                            <img class="img fluid" src ="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
+                            <img class="img fluid" src="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
                             <!-- /ko -->
                             <div class="card-body">
                                 <h4 class="card-title" data-bind="text: Name"></h4>
-                                <p class="card-text" >ID:  <span class ="card-text" data-bind="text: DriverId"></span></p>
-                                <p class="card-text" >Nationality:  <span class ="card-text" data-bind="text: Nationality"></span></p>
-                                <a class="btn btn-dark btn-sm" data-bind="attr: { href: './driverDetailsv2.html?id=' + DriverId }">Details</a>
+                                <p class="card-text">ID:  <span class="card-text" data-bind="text: ConstructorId"></span></p>
+                                <p class="card-text">Nationality: <span class="card-text" data-bind="text: Nationality"></span></p>
+                                <a class="btn btn-dark btn-sm" style="float:right" data-bind="attr: { href: './constructorDetails.html?id=' + ConstructorId }">Details</a>
                             </div>
                         </div>
+                    </div>
                 </div>
+    </div>
+
+
+
+    <div class="filler" style="width:100%;height:200px"></div>
+    <nav class="navbar navbar-dark bg-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+            <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a> by <a href="mailto:filipe.obrist@ua.pt" class="text-decoration-none text-muted">filipe.obrist@ua.pt</a> &  <a href="mailto:rodrigoaguiar96@ua.pt" class="text-decoration-none text-muted">rodrigoaguiar96@ua.pt</a></div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
             </div>
-            <h5 style="display:inline-block;padding-right:20px;width:100%; border-top-right-radius: 25px; border: 10px groove red;text-align: left; margin: 30px; margin-top: 0px;font-size:32px;" >Constructors</h3>
-                <div class="row" data-bind="foreach: recordsv2">
-                    <div class="col-md-6 col-lg-3 col-sm-12" style="margin-bottom:20px;"  >
-                                    <div class="card card1" style="width: 300px; height: 350px; border-radius:20px;border:2px solid black;">
-                                        <!-- ko if: ImageUrl-->
-                                        <img class="card-img-top" data-bind="attr: { src: ImageUrl }" style="height: 150px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
-                                        <!-- /ko -->
-                                        <!-- ko ifnot: ImageUrl-->
-                                        <img class="img fluid" src ="Images/formula1logo.png" style="height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px;border-bottom:2px solid black; ">
-                                        <!-- /ko -->
-                                        <div class="card-body">
-                                            <h4 class="card-title" data-bind="text: Name"></h4>
-                                            <p class="card-text" >ID:  <span class ="card-text" data-bind="text: ConstructorId"></span></p>
-                                            <p class="card-text" >Nationality: <span class ="card-text" data-bind="text: Nationality"></span></p>
-                                            <a class="btn btn-dark btn-sm" style="float:right" data-bind="attr: { href: './constructorDetails.html?id=' + ConstructorId }">Details</a>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-          </div>
-
-       
-        
-
+        </div>
+    </nav>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -119,11 +112,11 @@
         </div>
     </div>
     <!-- End of Working Area -->
-    
+
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/jquery-ui-1.13.0.js"></script>
-    <script src ="favourites.js"></script>
+    <script src="favourites.js"></script>
 </body>
 </html>
