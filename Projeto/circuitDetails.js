@@ -11,7 +11,8 @@
     self.CircuitRef = ko.observable('');
     self.ImageUrl = ko.observable('');
     self.Name = ko.observable('');
-    
+    self.latitude = ko.observable();
+    self.longitude= ko.observable()
     self.Location= ko.observable('');
     self.Country = ko.observable('');
     self.Races = ko.observableArray('');
@@ -30,6 +31,8 @@
             self.Location(data.Location);
             self.Races(data.Races);
             self.Url(data.Url);
+            self.latitude(data.Lat)
+            self.longitude(data.Lng)
             
             hideLoading();
 
@@ -86,6 +89,13 @@
         self.activate(1);
     else {
         self.activate(pg);
+    }
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: self.latitude(), lng: self.longitude(), },
+        zoom: 12
+        })
     }
 };
 

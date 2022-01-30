@@ -1,64 +1,4 @@
-﻿// Autocomplete 
-$(document).ready(function () {
-    $("#SearchText").autocomplete({
-        minLength: 3,
-        source: function (request, response) {
-            $.ajax({
-                type: "GET",
-                contentType: "application/json; charset=utf-8",
-                url: 'http://192.168.160.58/Formula1/api/Search/Constructors?q=' + $('#SearchText').val(),
-                data: '',
-                dataType: "json",
-                success: function (data) {
-                    console.log("ola")
-                    response($.map(data, function (item) {
-                        return item.Name
-
-                    }));
-                },
-                error: function (result) {
-                    alert(result.statusText);
-                }
-            });
-        }
-    });
-});
-    // Search feature ( search and enter both work )
-
-    var input = document.getElementById("SearchText");
-    input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-    event.preventDefault();
-    document.getElementById("button_search").click();
-}
-});  
-    $('#button_search').click(function () {
-        console.log ($('#SearchText').val());
-        var nome = $('#SearchText').val();
-
-        $.ajax({
-            type: "GET",
-            contentType: "application/json; charset=utf-8",
-            url: 'http://192.168.160.58/Formula1/api/Search/Constructors?q=' + $('#SearchText').val(),
-            data: '',
-            dataType: "json",
-            success: function (data) {
-                console.log(data)
-                for (var i = 0; i < data.length; i++) {
-                    if (nome == data[i].Name) {
-                        var id_constructor = data[i].ConstructorId;
-                        window.location.replace('./constructorDetails.html?id=' + id_constructor);
-                    }
-                }
-            },
-            error: function (result) {
-                alert(result.statusText);
-
-            }
-        });
-});
-
-
+﻿
 var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
@@ -103,6 +43,56 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+
+
+
+
+
+
+
+
+
+
+
+    $("#SearchText").autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: 'http://192.168.160.58/Formula1/api/Search/Constructors?q=' + $('#SearchText').val(),
+                data: '',
+                dataType: "json",
+                success: function (data) {
+                    autocompleteRecords = data;
+                    response($.map(data, function (item) {
+                        return item.Name;
+                    }));
+                },
+                error: function (result) {
+                    alert(result.statusText);
+                }
+            });
+        },
+
+        
+        // O SEARCH TÁ A CORRER BEM (NÃO COM O VALOR DO SELECT MAS SIM COM O VALOR DA CAIXA, MAS SÓ DÁ O SEARCH QND CLICO NUM SELECT, TEM DE DAR SEARCH QUANDO DOU ENTER OU BOTÃO)
+            select: function (event, ui) {
+            const search = ui.item.value;
+            const newRecords = [];
+
+            for (const d of autocompleteRecords) {
+                if (d.Name.includes(search)) {
+                    newRecords.push(d);
+                }
+            }
+            self.records(newRecords);
+        }
+    });
+    $("#button_delete").click(function(pg){
+        window.location.replace("constructors.html");
+        $("#SearchText").val('')
+     })
     //--- Page Events
     self.activate = function (id) {
         console.log('CALL: getConstructors...');
