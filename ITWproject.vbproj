@@ -206,6 +206,8 @@
     <Content Include="Projeto\drivers.css" />
     <Content Include="Projeto\drivers.html" />
     <Content Include="Projeto\drivers.js" />
+    <Content Include="Projeto\favourites.html" />
+    <Content Include="Projeto\favourites.js" />
     <Content Include="Projeto\history.html" />
     <Content Include="Projeto\index.js" />
     <Content Include="Projeto\legends.html" />
