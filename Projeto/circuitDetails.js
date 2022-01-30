@@ -92,12 +92,12 @@ var vm = function () {
         self.activate(pg);
     }
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: self.latitude(), lng: self.longitude(), },
         zoom: 14,
         mapTypeId: 'satellite',
-        })
-    }
+        });
+    };
 };
 
 $(document).ready(function () {
