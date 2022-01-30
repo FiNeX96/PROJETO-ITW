@@ -35,6 +35,7 @@ var vm = function () {
       self.Url(data.Url);
       self.latitude(data.Lat);
       self.longitude(data.Lng);
+      initMap()
       hideLoading();
     });
   };
@@ -85,15 +86,15 @@ var vm = function () {
   //--- start ....
   showLoading();
   var pg = getUrlParameter("id");
-  console.log(pg);
   if (pg == undefined) self.activate(1);
   else {
     self.activate(pg);
   }
+
   function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: self.latitude(), lng: self.longitude() },
-    zoom: 14,
+    zoom: 12,
     mapTypeId: "satellite",
     });
   }
