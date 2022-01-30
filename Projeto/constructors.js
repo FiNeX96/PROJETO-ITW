@@ -72,6 +72,7 @@ var vm = function () {
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(15);
     self.totalRecords = ko.observable(50);
+    self.favourites2 = ko.observableArray([])
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
     self.previousPage = ko.computed(function () {
@@ -117,6 +118,7 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.PageCount);
             self.totalRecords(data.Total);
+            self.SetFavourites();
         });
     };
 
@@ -185,22 +187,22 @@ var vm = function () {
 
 
     self.toggleFavourite = function (id) {
-        if (self.favourites.indexOf(id) == -1) {
-            self.favourites.push(id);
+        if (self.favourites2.indexOf(id) == -1) {
+            self.favourites2.push(id);
         } else {
-            self.favourites.remove(id);
+            self.favourites2.remove(id);
         }
-        localStorage.setItem("fav", JSON.stringify(self.favourites()));
+        localStorage.setItem("fav2", JSON.stringify(self.favourites2()));
     }
     self.SetFavourites = function () {
         let storage;
         try {
-            storage = JSON.parse(localStorage.getItem("fav"));
+            storage = JSON.parse(localStorage.getItem("fav2"));
         } catch (e) {
             ;
         }
         if (Array.isArray(storage)) {
-            self.favourites(storage)
+            self.favourites2(storage)
         }
     }
     console.log(localStorage)

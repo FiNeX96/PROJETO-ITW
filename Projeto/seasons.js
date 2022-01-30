@@ -16,6 +16,7 @@
     self.CWinner = ko.observable ();
     self.records = ko.observableArray([]);
     self.records2 = ko.observableArray([]);
+    self.records3 = ko.observableArray([])
     self.Constructors = ko.observable()
     self.currentPage = ko.observable(1);
     self.hasPrevious = ko.observable(false);
@@ -40,6 +41,7 @@
            self.hasNext(data.HasNext);
            self.hasPrevious(data.HasPrevious); 
            self.baseUri2('http://192.168.160.58/Formula1/api/Statistics/Season?year=' + data.List[0].Year)
+           self.baseUri3('http://192.168.160.58/Formula1/api/Seasons/Season?year=' + data.List[0].Year)
         ajaxHelper(self.baseUri2(), 'GET').done(function (data) {
                console.log(data)
                self.records(data.DriverStandings)
@@ -50,6 +52,9 @@
                self.Drivers(data.Drivers)
                self.Winner(data.DriverStandings[0].Name)
                self.CWinner(data.ConstructorStandings[0].Name)
+               ajaxHelper(self.baseUri3(), 'GET').done(function (data) {
+               self.records3(data.Races)
+               })
            });
        });
     };
@@ -130,6 +135,7 @@ $("#showDStand").click(function(){
   $("#tableDStand").removeClass("d-none")
   $("#tableDStand").addClass("d-block")
   $("#tableCStand").addClass("d-none");
+  $("#tableRaces").addClass("d-none");
   $("#Hide").removeClass("d-none")
   $("#Hide").addClass("d-block")
 })
@@ -137,12 +143,23 @@ $("#showCStand").click(function(){
     $("#tableCStand").removeClass("d-none")
     $("#tableCStand").addClass("d-block");
     $("#tableDStand").addClass("d-none");
+    $("#tableRaces").addClass("d-none");
+    $("#Hide").removeClass("d-none")
+    $("#Hide").addClass("d-block")
+})
+$("#showRaces").click(function(){
+    $("#tableRaces").removeClass("d-none")
+    $("#tableRaces").addClass("d-block");
+    $("#tableDStand").addClass("d-none");
+    $("#tableCStand").addClass("d-none");
     $("#Hide").removeClass("d-none")
     $("#Hide").addClass("d-block")
 })
 $("#Hide").click(function(){
     $("#tableCStand").removeClass("d-block");
     $("#tableCStand").addClass("d-none");
+    $("#tableRaces").removeClass("d-block");
+    $("#tableRaces").addClass("d-none");
     $("#tableDStand").removeClass("d-block");
     $("#tableDStand").addClass("d-none");
     $("#Hide").removeClass("d-block")

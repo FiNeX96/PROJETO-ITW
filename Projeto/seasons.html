@@ -125,7 +125,8 @@
                 <div class ="button wrapper" >
                 <button id="showDStand" class = "btn default btn-primary btn-sm"> Driver Standings</button>
                 <button id="showCStand" class = "btn default btn-primary btn-sm"> Constructor Standings</button>
-                <button id="Hide" class = "btn default btn-primary btn-sm d-none ">Hide Standings</button>
+                <button id="showRaces" class = "btn default btn-primary btn-sm">Races</button>
+                <button id="Hide" class = "btn default btn-primary btn-sm d-none" style="margin-top:20px;">Hide Standings</button>
                 </div>  
       </div>
     </div>
@@ -165,6 +166,23 @@
                   </tr>
                   </tbody>
                   </table>
+                  <table class="table d-none"  id = "tableRaces" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
+                    <thead>
+                      <tr>
+                        <th scope="col"style="padding-right:50px;text-align:center">Race ID</th>
+                        <th scope="col"style="padding-right:50px;text-align:center">Circuit Name</th>
+                        <th scope="col">Round</th>
+                      </tr>
+                    </thead>
+                    <tbody data-bind="foreach: records3">
+                      <tr>
+                        <th scope="row" data-bind="text: RaceId"></th>
+                        <td data-bind="text: CircuitName"></td>
+                        <td data-bind="text: Round"></td>
+                      </td>
+                      </tr>
+                      </tbody>
+                      </table>
                   </div>
     </div>
     

@@ -46,7 +46,6 @@
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
                 <span data-bind="html: 'Circuits: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
-            <button class="btn-fav btn-outline-success" style="width: 200px;height:30px;">Show Favorites</button> <!-- este botão tá uma real merda, tentar encostar isto à direita -->
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
@@ -88,7 +87,6 @@
                     <td class="align-middle" data-bind="text:Name"></td>
                     <td class="text-end">
                         <a class="btn btn-default btn-light btn-sm" data-bind="attr: { href:'./raceDetails.html?id=' + RaceId }"><i class="fa fa-eye" title="Selecione para ver detalhes"></i></a>
-                        <button class="btn btn-default btn-sm" onclick="setFavorites()"><i class="fa fa-heart-o" style="pointer-events: none;" data-bind="attr : { 'id': 'favourite_' + RaceId }" title="Selecione para adicionar aos favoritos"></i></button>
                     </td>
                 </tr>
             </tbody>
