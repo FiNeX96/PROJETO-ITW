@@ -86,7 +86,7 @@
                     <button class="btn btn-default btn-sm btn-outline-danger btn-favourite" data-bind="click: () => $parent.toggleFavourite(ConstructorId), attr : { 'id': 'favourite_' + ConstructorId }">
                         <i data-bind="attr : { 'class' : $parent.favourites2().includes(ConstructorId) ? 'fa fa-heart' : 'fa fa-heart-o'}" class="fa fa-heart-o" title="Selecione para adicionar aos favoritos"></i>
                     </button>
-                    <p class ="card-text">Nationality: <span data-bind="text: Nationality"></span></p>
+                    <p class="card-text">Nationality: <span data-bind="text: Nationality"></span></p>
                 </div>
                 <div class="footer">
                     <a data-bind="attr: { href:'./constructorDetails.html?id=' + ConstructorId }" class="btn btn-danger" style="width:100%; border-radius: 0px;">Constructor Details</a>
@@ -94,6 +94,7 @@
             </div>
         </div>
         <br />
+        <div class="filler" style="width:100%;height:700px; margin: 700px;"></div>
     </div>
     <div class="filler" style="width:100%;height:700px; margin: 500px;"></div>
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
