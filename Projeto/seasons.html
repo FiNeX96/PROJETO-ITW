@@ -43,181 +43,191 @@
         </div>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="card center text-center border-dark">
-            <div class="card-body">
-                <div class="card-title">
-                    <h1 class="card-header bg-success" data-bind="text: displayYear"></h1>
-                </div>
-                <div class="form-group input-group rounded" style="width: 30%; float: left; padding: 5px;">
-                    <input class="form-control me-2" placeholder="Search Year" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 1px;" />
-                    <button class="btn btn-outline-dark" id="button_search" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-search"></i></button>
-                </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <!-- ko if: currentPage() >= 5 -->
-                        <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './seasons.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                        <!-- /ko -->
-                        <!-- ko if: currentPage() >= 2-->
-                        <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './seasons.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
-                        <!-- /ko -->
-                        <!-- ko if: currentPage() != 72 -->
-                        <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './seasons.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                        <!-- /ko -->
-                        <!-- ko if: currentPage() <= 71  -->
-                        <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './seasons.html?page=' + totalPages() }">⇥</a></li>
-                        <!-- /ko -->
+                <div class="card center text-center border-dark">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h1 class="card-header bg-success" data-bind="text: displayYear"></h1>
+                        </div>
+                        <div class="form-group input-group rounded" style="width: 30%; float: left; padding: 5px;">
+                            <input class="form-control me-2" placeholder="Search Year" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 1px;" />
+                            <button class="btn btn-outline-dark" id="button_search" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-search"></i></button>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <!-- ko if: currentPage() >= 5 -->
+                                <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './seasons.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                                <!-- /ko -->
+                                <!-- ko if: currentPage() >= 2-->
+                                <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './seasons.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                                <!-- /ko -->
+                                <!-- ko if: currentPage() != 72 -->
+                                <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './seasons.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                                <!-- /ko -->
+                                <!-- ko if: currentPage() <= 71  -->
+                                <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './seasons.html?page=' + totalPages() }">⇥</a></li>
+                                <!-- /ko -->
 
-                    </ul>
-                </nav>
+                            </ul>
+                        </nav>
 
+                    </div>
+                    <div class="card-text card-sm-12" style="text-align:left;margin-left:15px">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Drivers</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" data-bind="text: Drivers">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Constructors</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" data-bind="text: Constructors">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Countries</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" data-bind="text: Countries">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Races</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" data-bind="text: Races">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Champion</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" data-bind="text: Winner">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Constructor Champion</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" data-bind="text: CWinner">
+                            </div>
+                        </div>
+                        <hr>
+                        <h5>
+                            <a data-bind="attr: { href: Url }">Wikipedia URL</a>
+                        </h5>
+                        <div class="button wrapper">
+                            <button id="showDStand" class="btn default btn-primary btn-sm"> Driver Standings</button>
+                            <button id="showCStand" class="btn default btn-primary btn-sm"> Constructor Standings</button>
+                            <button id="showRaces" class="btn default btn-primary btn-sm">Races</button>
+                            <button id="Hide" class="btn default btn-primary btn-sm d-none" style="margin-top:20px;">Hide Standings</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <div class="card-text card-sm-12" style = "text-align:left;margin-left:15px">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Drivers</h6>
-                </div>
-                <div class="col-sm-9 text-secondary" data-bind="text: Drivers">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Constructors</h6>
-                </div>
-                <div class="col-sm-9 text-secondary" data-bind="text: Constructors">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Countries</h6>
-                </div>
-                <div class="col-sm-9 text-secondary" data-bind="text: Countries">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Races</h6>
-                </div>
-                <div class="col-sm-9 text-secondary" data-bind="text: Races">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Champion</h6>
-                </div>
-                <div class="col-sm-9 text-secondary" data-bind="text: Winner">
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Constructor Champion</h6>
-                </div>
-                <div class="col-sm-9 text-secondary" data-bind="text: CWinner">
-                </div>
-            </div>
-            <hr>
-            <h5>
-                <a data-bind="attr: { href: Url }">Wikipedia URL</a> </h5>
-                <div class ="button wrapper" style="margin-bottom:30px" >
-                <button id="showDStand" class = "btn default btn-primary btn-sm"> Driver Standings</button>
-                <button id="showCStand" class = "btn default btn-primary btn-sm"> Constructor Standings</button>
-                <button id="showRaces" class = "btn default btn-primary btn-sm">Races</button>
-                <button id="Hide" class = "btn default btn-primary btn-sm d-none" style="margin-top:20px;">Hide Standings</button>
-                </div>  
-      </div>
-    </div>
-    </div>
-    <div class ="col-lg-6 col-sm-6 col-md-6">
-        <table class="table d-none"  id = "tableDStand" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
-            <thead>
-              <tr>
-                <th scope="col"style="padding-right:50px;text-align:center">Position</th>
-                <th scope="col"style="padding-right:50px;text-align:center">ID</th>
-                <th scope="col">Name</th>
-              </tr>
-            </thead>
-            <tbody data-bind="foreach: records">
-              <tr>
-                <th scope="row" data-bind="text: Position"></th>
-                <td data-bind="text: DriverId"></td>
-                <td data-bind="text: Name"></td>
-              </td>
-              </tr>
-              </tbody>
-              </table>
-              <table class="table d-none" id = "tableCStand" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y: scroll;">
-                <thead>
-                  <tr>
-                    <th scope="col"style="padding-right:50px;text-align:center">Points</th>
-                    <th scope="col"style="padding-right:50px;text-align:center">Id</th>
-                    <th scope="col">Constructor Name</th>
-                  </tr>
-                </thead>
-                <tbody data-bind="foreach: records2">
-                  <tr>
-                    <th scope="row" data-bind="text: Points"></th>
-                    <td data-bind="text: ConstructorId"></td>
-                    <td data-bind="text: Name"></td>
-                  </td>
-                  </tr>
-                  </tbody>
-                  </table>
-                  <table class="table d-none"  id = "tableRaces" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
+            <div class="col-lg-6 col-sm-6 col-md-6">
+                <table class="table d-none" id="tableDStand" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
                     <thead>
-                      <tr>
-                        <th scope="col"style="padding-right:50px;text-align:center">Race ID</th>
-                        <th scope="col"style="padding-right:50px;text-align:center">Circuit Name</th>
-                        <th scope="col">Round</th>
-                      </tr>
+                        <tr>
+                            <th scope="col" style="padding-right:50px;text-align:center">Position</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">ID</th>
+                            <th scope="col">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: records">
+                        <tr>
+                            <th scope="row" data-bind="text: Position"></th>
+                            <td data-bind="text: DriverId"></td>
+                            <td data-bind="text: Name"></td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table d-none" id="tableCStand" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y: scroll;">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="padding-right:50px;text-align:center">Points</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">Id</th>
+                            <th scope="col">Constructor Name</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: records2">
+                        <tr>
+                            <th scope="row" data-bind="text: Points"></th>
+                            <td data-bind="text: ConstructorId"></td>
+                            <td data-bind="text: Name"></td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table d-none" id="tableRaces" style="width:460px;position:absolute;border:dotted 3px red;height:600px;overflow-y:scroll">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="padding-right:50px;text-align:center">Race ID</th>
+                            <th scope="col" style="padding-right:50px;text-align:center">Circuit Name</th>
+                            <th scope="col">Round</th>
+                        </tr>
                     </thead>
                     <tbody data-bind="foreach: records3">
-                      <tr>
-                        <th scope="row" data-bind="text: RaceId"></th>
-                        <td data-bind="text: CircuitName"></td>
-                        <td data-bind="text: Round"></td>
-                      </td>
-                      </tr>
-                      </tbody>
-                      </table>
-                  </div>
-    </div>
-    
-               <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-dark text-light">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
-
-                    </h5>
+                        <tr>
+                            <th scope="row" data-bind="text: RaceId"></th>
+                            <td data-bind="text: CircuitName"></td>
+                            <td data-bind="text: Round"></td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="filler" style="width:100%;height:500px"></div>
+        <nav class="navbar navbar-dark bg-dark fixed-bottom">
+            <div class="container small">
+                <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+                <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a> by <a href="mailto:filipe.obrist@ua.pt" class="text-decoration-none text-muted">filipe.obrist@ua.pt</a> &  <a href="mailto:rodrigoaguiar96@ua.pt" class="text-decoration-none text-muted">rodrigoaguiar96@ua.pt</a></div>
+                <div class="navbar-nav">
+                    <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
                 </div>
-                <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
+            </div>
+        </nav>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-light">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
+
+                        </h5>
+                    </div>
+                    <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>     
-    <script src="../Scripts/bootstrap.bundle.min.js"></script>
-    <script src="../Scripts/knockout-3.5.1.js"></script>
-    <script src="../Scripts/jquery-3.6.0.min.js"></script>
-    <script src="seasons.js"></script>
-    <script>
-        $("#button_search").click(function(){
-        var box = $("#SearchText").val();
-        console.log(box)
-        var value = box - 1949
-        console.log(value)
-        if (value < 1 || value > 72) {
-            alert("Error 404 - No Seasons Available in " + box )
-        } 
-        else{
-            window.location.replace("seasons.html?page=" + value)
-        }
-        });
-    </script>
+        <script src="../Scripts/bootstrap.bundle.min.js"></script>
+        <script src="../Scripts/knockout-3.5.1.js"></script>
+        <script src="../Scripts/jquery-3.6.0.min.js"></script>
+        <script src="seasons.js"></script>
+        <script>
+            $("#button_search").click(function () {
+                var box = $("#SearchText").val();
+                console.log(box)
+                var value = box - 1949
+                console.log(value)
+                if (value < 1 || value > 72) {
+                    alert("Error 404 - No Seasons Available in " + box)
+                }
+                else {
+                    window.location.replace("seasons.html?page=" + value)
+                }
+            });
+        </script>
 </body>
 </html>

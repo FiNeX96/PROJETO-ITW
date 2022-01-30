@@ -116,20 +116,30 @@
             </div>
         </div>
     </div>
+    <div class="filler" style="width:100%;height:400px"></div>
+    <nav class="navbar navbar-dark bg-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+            <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a> by <a href="mailto:filipe.obrist@ua.pt" class="text-decoration-none text-muted">filipe.obrist@ua.pt</a> &  <a href="mailto:rodrigoaguiar96@ua.pt" class="text-decoration-none text-muted">rodrigoaguiar96@ua.pt</a></div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script>
-    var total = sessionStorage.getItem("total");
-     $(totalpreço).text(total+"€")
-    </script>
-    <script> 
-    $("#PaymentButton").click(function(){
-    $("#ConfirmPayment").removeClass("d-none")
-    })
+        var total = sessionStorage.getItem("total");
+        $(totalpreço).text(total + "€")
     </script>
     <script>
-        $("#ConfirmPayment").click(function(){
+        $("#PaymentButton").click(function () {
+            $("#ConfirmPayment").removeClass("d-none")
+        })
+    </script>
+    <script>
+        $("#ConfirmPayment").click(function () {
             $("#final").removeClass("d-none");
             $('#barra').css({ 'width': '100%' });
         })

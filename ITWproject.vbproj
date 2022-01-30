@@ -199,7 +199,6 @@
     <Content Include="Projeto\constructorDetails.js" />
     <Content Include="Projeto\constructors.html" />
     <Content Include="Projeto\constructors.js" />
-    <Content Include="Projeto\countries.html" />
     <Content Include="Projeto\driverDetails.js" />
     <Content Include="Projeto\driverDetailsAntigo.html" />
     <Content Include="Projeto\driverdetailsv2.html" />
@@ -208,9 +207,7 @@
     <Content Include="Projeto\drivers.js" />
     <Content Include="Projeto\favourites.html" />
     <Content Include="Projeto\favourites.js" />
-    <Content Include="Projeto\history.html" />
     <Content Include="Projeto\index.js" />
-    <Content Include="Projeto\legends.html" />
     <Content Include="Projeto\myCSS.css" />
     <Content Include="Projeto\index.html" />
     <Content Include="Projeto\nav.html" />
@@ -218,7 +215,6 @@
     <Content Include="Projeto\raceDetails.js" />
     <Content Include="Projeto\races.html" />
     <Content Include="Projeto\races.js" />
-    <Content Include="Projeto\rules.html" />
     <Content Include="Projeto\seasons.html" />
     <Content Include="Projeto\seasons.js" />
     <Content Include="Projeto\tickets.html" />

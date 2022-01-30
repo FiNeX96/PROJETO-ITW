@@ -80,7 +80,7 @@
                 <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image">
                 <!-- /ko -->
                 <!-- ko ifnot: ImageUrl-->
-                <img class="img fluid" src="Images/formula1logo.png" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image" >
+                <img class="img fluid" src="Images/formula1logo.png" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image">
                 <!-- /ko -->
                 <div class="card-body" style="width: 100%; border: 2px solid; border-top: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
                     <h5 class="card-title"><span data-bind="text: Name"></span></h5>
@@ -93,27 +93,38 @@
                 </div>
             </div>
         </div>
+        <br />
     </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark text-light">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
+    <div class="filler" style="width:100%;height:700px; margin: 500px;"></div>
+    <nav class="navbar navbar-dark bg-dark fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+            <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a> by <a href="mailto:filipe.obrist@ua.pt" class="text-decoration-none text-muted">filipe.obrist@ua.pt</a> &  <a href="mailto:rodrigoaguiar96@ua.pt" class="text-decoration-none text-muted">rodrigoaguiar96@ua.pt</a></div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fa fa-spin fa-3x fa-refresh"></i>                                                        Loading data...
 
-                        </h5>
-                    </div>
-                    <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
-                    </div>
+                    </h5>
+                </div>
+                <div class="modal-body text-center" style="background-image: url(https://www.gqportugal.pt/media/pages/4472/full_F1.jpg); background-position: center; background-size: cover; height: 100px;">
                 </div>
             </div>
         </div>
-        <script src="../Scripts/bootstrap.bundle.min.js"></script>
-        <script src="../Scripts/knockout-3.5.1.js"></script>
-        <script src="../Scripts/jquery-3.6.0.min.js"></script>
-        <script src="../Scripts/jquery-ui-1.13.0.js"></script>
-        <script src="constructors.js"></script>
+    </div>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/knockout-3.5.1.js"></script>
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.13.0.js"></script>
+    <script src="constructors.js"></script>
 
 </body>
 </html>
