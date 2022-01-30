@@ -50,43 +50,42 @@
                 <div class="row">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './circuits.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './circuits.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                    <li class="page-item float-end"><a class="page-link" style="color: black" title="First Page" data-bind="attr: { href: './circuits.html?page=' + '1',  rel:'prev'}"><<</a></li>
+                    <li class="page-item float-end"><a class="page-link" style="color: black" title="Previous Page" data-bind="attr: { href: './circuits.html?page=' + previousPage(),  rel:'prev'}"><</a></li>
                     <!-- /ko -->
                     <!-- ko foreach: pageArray()-->
                     <!-- ko if:$data == $parent.currentPage() -->
-                    <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
+                    <li class="active page-item"><a class="page-link" style="color: black; background-color: lightgrey;" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
                     <!-- /ko -->
                     <!-- ko if:$data != $parent.currentPage() -->
-                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './circuits.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                    <li class="page-item"><a class="page-link" style="color: black" data-bind="attr: { href: './circuits.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
                     <!-- /ko -->
                     <!-- /ko -->
                     <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './circuits.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './circuits.html?page=' + totalPages() }">⇥</a></li>
+                    <li class="page-item"><a class="page-link" style="color: black" title="Next Page" data-bind="attr: { href: './circuits.html?page=' + nextPage(), rel:'next' }">></a></li>
+                    <li class="page-item"><a class="page-link" style="color: black" title="Last Page" data-bind="attr: { href: './circuits.html?page=' + totalPages() }">>></a></li>
                     <!-- /ko -->
                 </ul>
             </div>
         </div>
         <!-- /ko -->
-        <div class="form-group input-group rounded" style="position:absolute;right:100px;top:175px;margin-bottom:35px;;width: 30%; float: right; padding: 5px;">
+        <div class="form-group input-group rounded" style="position:absolute;right:100px;top:175px;margin-bottom:35px;width: 30%; float: right; padding: 5px;">
             <input class="form-control me-2" placeholder="Search By Name" type="search" aria-label="Search" id="SearchText" style="height: 35px; width: 100px; border-radius: 3px;" />
             <button class="btn btn-outline-dark" id="button_delete" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-times-circle"></i></button>
         </div>
         <div class="col-md-3 col-lg-3 col-sm-12" data-bind="foreach: records" style="width:100%;">
-            <div class="zoom" style="width:30%; float:left; margin:20px;">
-                <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 250px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Circuit Image">
-                <div class="card-body" style="width: 100%; border: 2px solid; border-top: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
-                    <h5 class="card-title"><span data-bind="text: Name"></span></h5>
-                    <p class="card-title">CircuitId: <span data-bind="text: CircuitId"></span></p>
-                    <p class="card-title">Location: <span data-bind="text: Country"></span></p>
+            <a data-bind="attr: { href:'./circuitDetails.html?id=' + CircuitId }" style="text-decoration: none; color: black">
+                <div class="zoom" style="width:30%; float:left; margin:20px;">
+                    <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 250px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Circuit Image">
+                    <div class="card-body" style="width: 100%; border: 2px solid; border-top: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
+                        <h5 class="card-title"><span data-bind="text: Name"></span></h5>
+                        <p class="card-title">CircuitId: <span data-bind="text: CircuitId"></span></p>
+                        <p class="card-title">Location: <span data-bind="text: Country"></span></p>
+                    </div>
                 </div>
-                <div class="footer">
-                    <a data-bind="attr: { href:'./circuitDetails.html?id=' + CircuitId }" class="btn btn-danger" style="width:100%; border-radius: 0px;">Circuit Details</a>
-                </div>
-            </div>
+            </a>
         </div>
-        <div class="filler" style="width:100%;height:400px;"></div>
+        <div class="filler" style="width:100%;height:700px;"></div>
     </div>
     <div class="filler" style="width:100%;height:400px; margin: 500px;"></div>
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
