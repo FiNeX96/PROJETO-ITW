@@ -39,7 +39,6 @@ var vm = function () {
           var composedUri2 = self.baseUri2() + favoritos2[ConstructorId]
           ajaxHelper(composedUri2, "GET").done(function (data) {
             self.recordsv2.push(data);
-            hideLoading();
         })
     }
     }
@@ -51,7 +50,6 @@ var vm = function () {
         var composedUri3 = self.baseUri3() + favoritos3[RaceId]
         ajaxHelper(composedUri3, "GET").done(function (data) {
           self.recordsv3.push(data);
-          hideLoading();
       })
     }
   }
