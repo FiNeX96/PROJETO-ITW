@@ -64,9 +64,6 @@ var vm = function () {
                 }
             });
         },
-
-        
-        
             select: function (event, ui) {
             const search = ui.item.value;
             const newRecords = [];
