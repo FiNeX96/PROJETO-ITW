@@ -34,7 +34,7 @@ var vm = function () {
     else{
         $("#drivers").text(" Drivers - no favourite drivers")
     }
-        if (favoritos2.length > 0){
+        if (favoritos2.length() > 0){
         for (let ConstructorId = 0 ; ConstructorId < favoritos2.length; ConstructorId++){
           var composedUri2 = self.baseUri2() + favoritos2[ConstructorId]
           ajaxHelper(composedUri2, "GET").done(function (data) {
