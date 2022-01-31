@@ -31,6 +31,9 @@ var vm = function () {
             });
         }
     }
+    else{
+        $("#drivers").text(" Drivers - no favourite drivers")
+    }
         if (favoritos2.length > 0){
         for (let ConstructorId = 0 ; ConstructorId < favoritos2.length; ConstructorId++){
           var composedUri2 = self.baseUri2() + favoritos2[ConstructorId]
@@ -40,7 +43,11 @@ var vm = function () {
         })
     }
     }
+    else{
+        $("#constructors").text(" Constructors - No favourite constructors")
+    }
         if (favoritos3.length > 0 ){
+             
     for (let RaceId = 0 ; RaceId < favoritos3.length; RaceId++){
         var composedUri3 = self.baseUri3() + favoritos3[RaceId]
         ajaxHelper(composedUri3, "GET").done(function (data) {
@@ -48,6 +55,9 @@ var vm = function () {
           hideLoading();
       })
     }
+  }
+  else{
+    $("#circuits").text(" Circuits - No favourite circuits")
   }
     };
     //--- Internal functions
