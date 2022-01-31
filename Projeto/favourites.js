@@ -23,7 +23,7 @@ var vm = function () {
     //--- Page Events
     self.activate = function (id) {
         console.log("CALL: getFavourites...");
-        if (favoritos.length > 0) {
+        if (Array.isArray(favoritos) && favoritos.length > 0 ) {
         for (let driverID = 0; driverID < favoritos.length; driverID++) {
             var composedUri = self.baseUri() + favoritos[driverID];
             ajaxHelper(composedUri, "GET").done(function (data) {
@@ -34,7 +34,7 @@ var vm = function () {
     else{
         $("#drivers").text(" Drivers - no favourite drivers")
     }
-        if (favoritos2.length > 0){
+        if ( Array.isArray(favoritos2) && favoritos2.length > 0 ){
         for (let ConstructorId = 0 ; ConstructorId < favoritos2.length; ConstructorId++){
           var composedUri2 = self.baseUri2() + favoritos2[ConstructorId]
           ajaxHelper(composedUri2, "GET").done(function (data) {
@@ -46,8 +46,7 @@ var vm = function () {
     else{
         $("#constructors").text(" Constructors - No favourite constructors")
     }
-        if (favoritos3.length > 0 ){
-             
+        if ( Array.isArray(favoritos3) && favoritos3.length > 0  ){   
     for (let RaceId = 0 ; RaceId < favoritos3.length; RaceId++){
         var composedUri3 = self.baseUri3() + favoritos3[RaceId]
         ajaxHelper(composedUri3, "GET").done(function (data) {
@@ -57,7 +56,7 @@ var vm = function () {
     }
   }
   else{
-    $("#circuits").text(" Circuits - No favourite circuits")
+    $("#circuits").text(" Circuits - No favourite constructors")
   }
     };
     //--- Internal functions
