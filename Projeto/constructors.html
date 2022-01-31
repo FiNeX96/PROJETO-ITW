@@ -74,24 +74,23 @@
             <button class="btn btn-outline-dark" id="button_delete" style="height: 35px; border-radius: 3px;" type="button"><i class="fa fa-times-circle"></i></button>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-12" data-bind="foreach: records" style="width:100%;">
-            <div class="zoom" style="width:30%; float:left; margin:20px;">
-                <!-- ko if: ImageUrl-->
-                <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image">
-                <!-- /ko -->
-                <!-- ko ifnot: ImageUrl-->
-                <img class="img fluid" src="Images/formula1logo.png" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image">
-                <!-- /ko -->
-                <div class="card-body" style="width: 100%; border: 2px solid; border-top: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
-                    <h5 class="card-title"><span data-bind="text: Name"></span></h5>
-                    <button class="btn btn-default btn-sm btn-outline-danger btn-favourite" data-bind="click: () => $parent.toggleFavourite(ConstructorId), attr : { 'id': 'favourite_' + ConstructorId }">
-                        <i data-bind="attr : { 'class' : $parent.favourites2().includes(ConstructorId) ? 'fa fa-heart' : 'fa fa-heart-o'}" class="fa fa-heart-o" title="Selecione para adicionar aos favoritos"></i>
-                    </button>
-                    <p class="card-text">Nationality: <span data-bind="text: Nationality"></span></p>
+            <a data-bind="attr: { href:'./constructorDetails.html?id=' + ConstructorId }" style="text-decoration: none; color: black">
+                <div class="zoom" style="width:30%; float:left; margin:20px;">
+                    <!-- ko if: ImageUrl-->
+                    <img class="card-img-top" data-bind="attr:{src: ImageUrl}" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image">
+                    <!-- /ko -->
+                    <!-- ko ifnot: ImageUrl-->
+                    <img class="img fluid" src="Images/formula1logo.png" style="width: 100%; height: 150px; border: 2px solid; border-bottom: none; border-top-left-radius: 6px; border-top-right-radius: 6px;" alt="Contructor Image">
+                    <!-- /ko -->
+                    <div class="card-body" style="width: 100%; border: 2px solid; border-top: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
+                        <h5 class="card-title"><span data-bind="text: Name"></span></h5>
+                        <button class="btn btn-default btn-sm btn-outline-danger btn-favourite" data-bind="click: () => $parent.toggleFavourite(ConstructorId), attr : { 'id': 'favourite_' + ConstructorId }">
+                            <i data-bind="attr : { 'class' : $parent.favourites2().includes(ConstructorId) ? 'fa fa-heart' : 'fa fa-heart-o'}" class="fa fa-heart-o" title="Selecione para adicionar aos favoritos"></i>
+                        </button>
+                        <p class="card-text">Nationality: <span data-bind="text: Nationality"></span></p>
+                    </div>
                 </div>
-                <div class="footer">
-                    <a data-bind="attr: { href:'./constructorDetails.html?id=' + ConstructorId }" class="btn btn-danger" style="width:100%; border-radius: 0px;">Constructor Details</a>
-                </div>
-            </div>
+            </a>
         </div>
         <br />
         <div class="filler" style="width:60%;height:200px;"></div>
