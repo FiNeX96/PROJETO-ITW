@@ -112,3 +112,6 @@ $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
+for (let i=0;i<3;i++){
+    console.log(vm.Races()[i])
+}
